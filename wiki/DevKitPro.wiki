@@ -1,1 +1,2 @@
-DevKitPro is a set of libraries that provides easy access to DS and Wii hardware. See their homepage [http://www.devkitpro.org/ here].
+#labels Phase-Implementation
+DevKitPro is a set of libraries that provide easy access to DS and Wii hardware in C++. Its homepage is [http://www.devkitpro.org/ here].
