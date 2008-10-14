@@ -1,6 +1,6 @@
 #labels Phase-Implementation
 This page details how to setup a development environment for compiling source code.
 
-# Download DevKitPro installation and setup shell script from http://ubuntuforums.org/showthread.php?t=750050.
-# Run the shell script.
-# Be sure to add the necessary lines to ''~/.bashrc''. after the script has completed.
+  # Download DevKitPro installation and setup shell script from http://ubuntuforums.org/showthread.php?t=750050.
+  # Run the shell script.
+  # Be sure to add the necessary lines to ''~/.bashrc''. after the script has completed.
