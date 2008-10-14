@@ -3,4 +3,4 @@ This page details how to setup a development environment for compiling source co
 
   # Download DevKitPro installation and setup shell script from http://ubuntuforums.org/showthread.php?t=750050.
   # Run the shell script.
-  # Be sure to add the necessary lines to ''~/.bashrc''. after the script has completed.
+  # Be sure to add the necessary lines to _~/.bashrc_. after the script has completed.
