@@ -6,12 +6,36 @@ This page tells you how we like out code to be done.
 
 = Source Files =
 
-  * Source files and folder names are in lowercase
-  * Source files either have the extension .c/.h depending on whether they are source/header files
+  * Source files and folder names are in lowercase.
+  * Source files either have the extension .cpp/.h depending on whether they are source/header files.
 
 = Constants =
 
-  * Constants will always be in BLOCK CAPS with underscores for spaces
-  * They are always prefixed with an identifier followed by an underscore
-  * Constants relating to the DS will are prefixed with DS
-  * Constants relating to DS Paint will are prefixed with DSP
+  * Constants will always be in BLOCK CAPS with underscores for spaces.
+  * They are always prefixed with an identifier followed by an underscore.
+  * Constants relating to the DS will are prefixed with DS.
+  * Constants relating to DS Paint will are prefixed with DSP.
+
+= Methods =
+
+  * Methods should have a comment block above describing the purpose of the method, parameters and return type. Exceptions that can be thrown should also be listed.
+
+= Syntax =
+
+  * Curly brackets for code blocks should be on their own line, like this:
+  {{{
+  Foo()
+  {
+    bar();
+  }
+  }}}
+  * Single-line code blocks should either use curly brackets, like this:
+  {{{
+  if (foo == 0)
+  {
+    bar = 1;
+  }
+  }}}
+  ... or be on the same line, like this:
+  {{{
+  if (foo == 0) bar = 1;
