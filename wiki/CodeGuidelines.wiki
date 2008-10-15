@@ -39,3 +39,16 @@ This page tells you how we like out code to be done.
   ... or be on the same line, like this:
   {{{
   if (foo == 0) bar = 1;
+  }}}
+  * Methods which take more than 3 parameters should use a seperate line for each parameter, like this:
+  {{{
+  void Foo()
+  {
+    method(
+      parameter1,
+      parameter2,
+      parameter3,
+      parameter4,
+    );
+  }
+  }}}
