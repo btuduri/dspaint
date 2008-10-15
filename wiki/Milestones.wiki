@@ -1,4 +1,5 @@
 #summary Milestones.
+#labels Phase-Implementation,Phase-Requirements,Phase-Design
 
 = Introduction =
 
