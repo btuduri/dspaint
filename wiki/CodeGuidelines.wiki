@@ -14,7 +14,7 @@ This page tells you how we like out code to be done.
 
   * Constants will always be in BLOCK CAPS with underscores for spaces.
   * They are always prefixed with an identifier followed by an underscore.
-  * Constants relating to the DS will are prefixed with DS.
+  * Constants relating to the DS will are prefixed with NDS.
   * Constants relating to DS Paint will are prefixed with DSP.
 
 = Methods =
