@@ -53,3 +53,5 @@ This page tells you how we like out code to be done.
     );
   }
   }}}
+  * Tabs will be used for indentation.
+  * Each file must end with a trailing blank line.
