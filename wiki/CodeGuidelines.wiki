@@ -53,5 +53,5 @@ This page tells you how we like out code to be done.
     );
   }
   }}}
-  * Tabs will be used for indentation.
+  * Tabs will be used for indentation (4 spaces).
   * Each file must end with a trailing blank line.
