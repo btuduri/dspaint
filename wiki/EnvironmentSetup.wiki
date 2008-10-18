@@ -5,3 +5,4 @@ This page details how to setup a development environment for compiling the sourc
   # Be sure to add the necessary export lines to _~/.bashrc_.
   # Open the project in your chosen IDE.
   # Compile using the makefile provided.
+  # You can debug/test the binary without a DS by using an emulator. A decent emulator that is Windows only but works perfectly via wine is [http://nocash.emubase.de/no\$gba-w.zip No$GBA].
