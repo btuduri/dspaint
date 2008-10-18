@@ -1,0 +1,19 @@
+#summary Compiling.
+#labels Phase-Implementation
+
+= Introduction =
+
+This page tells you how to compile DS Paint.
+
+
+= Windows =
+N/A
+
+= Linux =
+Make sure you have followed the instructions in [http://code.google.com/p/dspaint/wiki/EnvironmentSetup EnvironmentSetup] before beginning. The steps are as follows:
+  # Get the latest SVN source
+  # Navigate to the root folder of dspaint using the terminal
+  # Type 'make clean'
+  # Type 'make'
+
+A DSPaint.nds should appear in the root folder of dspaint which is now ready to use.
