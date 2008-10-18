@@ -1,7 +1,7 @@
 #labels Phase-Implementation
 This page details how to setup a development environment for compiling the source code.
 
-  # Download DevKitPro/DevKitARM by following the guide [http://www.coderjoe.net/archive/2007/07/10/so-you-want-to-make-nintendo-ds-homebrew/.here]. Be sure to set everything up in your home folder rather than /usr as the guide suggests.
+  # Download DevKitPro by following the guide [http://www.coderjoe.net/archive/2007/07/10/so-you-want-to-make-nintendo-ds-homebrew/ here]. Be sure to set everything up in your home folder rather than /usr as the guide suggests.
   # Be sure to add the necessary export lines to _~/.bashrc_.
   # Open the project in your chosen IDE.
   # Compile using the makefile provided.
