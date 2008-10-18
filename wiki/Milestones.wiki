@@ -3,7 +3,7 @@
 
 = Introduction =
 
-This page contains milestones for DS Paint. They have to be met before DS Paint can be released.
+This page contains milestones for DS Paint. They have to be met before DS Paint can be released. When committing a change that meets the milestone, prefix the message with 'Milestone nn:' when 'nn' is the milestone number.
 
 
 == 0.1 ==
