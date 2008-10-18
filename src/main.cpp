@@ -11,37 +11,56 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#include "constants.h"
+
 using namespace std;
 
-//---------------------------------------------------------------------------------
-int main(void) {
-//---------------------------------------------------------------------------------
+// sets the screen to white
+// this is dependant on whichever screen is currently being set
+void clear()
+{
+	// get the max number of pixels
+	int max = NDS_SCREEN_MAX_WIDTH * NDS_SCREEN_MAX_HEIGHT;
+	
+	// set each individual pixel to white
+	for (int i = 0; i < max; i++)
+	{
+		VRAM_A[i] = RGB15(31, 31, 31);
+	}
+}
+
+// entry point
+int main(void)
+{
+	// this is the struct for when the DS touches the screen
 	touchPosition touchXY;
 
+	// always needs to have
 	irqInit();
 	irqEnable(IRQ_VBLANK);
 
-	videoSetMode(0);	//not using the main screen
-	videoSetModeSub(MODE_0_2D | DISPLAY_BG0_ACTIVE);	//sub bg 0 will be used to print text
-	vramSetBankC(VRAM_C_SUB_BG);
+	// set the video mode
+	// default is black screen
+	videoSetMode(MODE_FB0);
+	vramSetBankA(VRAM_A_LCD);
 
-	SUB_BG0_CR = BG_MAP_BASE(31);
-
-	BG_PALETTE_SUB[255] = RGB15(31,31,31);	//by default font will be rendered with color 255
-
-	//consoleInit() is a lot more flexible but this gets you up and running quick
-	consoleInitDefault((u16*)SCREEN_BASE_BLOCK_SUB(31), (u16*)CHAR_BASE_BLOCK_SUB(0), 16);
-
-	iprintf("\n\n\tHello DS dev'rs\n");
-	iprintf("\twww.drunkencoders.com");
-
-	while(1) {
-
-		touchXY=touchReadXY();
-		iprintf("\x1b[10;0HTouch x = %04X, %04X\n", touchXY.x, touchXY.px);
-		iprintf("Touch y = %04X, %04X\n", touchXY.y, touchXY.py);
-
+	// draw onto the bottom screen
+	lcdMainOnBottom();
+	
+	// clear the screen
+	clear();
+	
+	// loop for processing commands
+	while (true)
+	{
+		// this is to keep the DS stop wasting 100% CPU in the loop
 		swiWaitForVBlank();
+		
+		// get the position of the touch screen position
+		touchXY = touchReadXY();
+		
+		// set that pixel to black
+		VRAM_A[touchXY.px + touchXY.py * NDS_SCREEN_MAX_WIDTH] = RGB15(0, 0, 0);
 	}
 
 	return 0;
