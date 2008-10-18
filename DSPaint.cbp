@@ -32,7 +32,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="source/main.c">
+		<Unit filename="DSPaint.layout" />
+		<Unit filename="Makefile" />
+		<Unit filename="src/common.h" />
+		<Unit filename="src/constants.h" />
+		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
