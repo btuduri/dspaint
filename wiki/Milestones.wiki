@@ -20,3 +20,7 @@ When committing a change that meets the milestone, prefix the message with 'Mile
   * Refactoring
   * Change the namespace to DSPaint
   * Move structs into classes
+
+== 0.3 ==
+
+  * Clear the screen using a button and a confirmation prompt
