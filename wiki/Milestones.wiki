@@ -18,3 +18,5 @@ When committing a change that meets the milestone, prefix the message with 'Mile
 == 0.2 ==
 
   * Refactoring
+  * Change the namespace to DSPaint
+  * Move structs into classes
