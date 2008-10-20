@@ -57,3 +57,4 @@ This page tells you how we like out code to be done.
   * Spaces will be used for indentation at the end.
   * Each file may only contain 1 class.
   * Each file must end with a trailing blank line.
+  * Interfaces are prefixed with 'I'.
