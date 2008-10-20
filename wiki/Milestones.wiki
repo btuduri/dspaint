@@ -19,6 +19,7 @@ When committing a change that meets the milestone, prefix the message with 'Mile
 
   * Refactoring
   * Change the namespace to DSPaint
+  * Implement the IPen interface and the Pen class.
   * Move structs into classes
 
 == 0.3 ==
