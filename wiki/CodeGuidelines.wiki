@@ -20,9 +20,11 @@ This page tells you how we like out code to be done.
 = Methods =
 
   * Methods should have a comment block above describing the purpose of the method, parameters and return type. Exceptions that can be thrown should also be listed.
+  * Method names use Pascal casing.
 
 = Syntax =
 
+  * Private variables use Camel casing.
   * Curly brackets for code blocks should be on their own line, like this:
   {{{
   Foo()
