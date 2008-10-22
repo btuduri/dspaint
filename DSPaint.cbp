@@ -35,8 +35,10 @@
 		<Unit filename="DSPaint.layout" />
 		<Unit filename="Makefile" />
 		<Unit filename="src/common.h" />
-		<Unit filename="src/constants.h" />
+		<Unit filename="src/Constants.h" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/IPen.h" />
+		<Unit filename="src/Pen.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />
