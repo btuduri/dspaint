@@ -1,6 +1,6 @@
 #include <nds.h>
-
 #include "Constants.h"
+#include "Canvas.h"
 
 // sets the screen to white
 // this is dependant on whichever screen is currently being set
