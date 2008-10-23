@@ -34,11 +34,13 @@
 		</Compiler>
 		<Unit filename="DSPaint.layout" />
 		<Unit filename="Makefile" />
+		<Unit filename="src/Canvas.cpp" />
+		<Unit filename="src/Canvas.h" />
 		<Unit filename="src/Common.h" />
 		<Unit filename="src/Constants.h" />
 		<Unit filename="src/IPen.h" />
+		<Unit filename="src/Main.cpp" />
 		<Unit filename="src/Pen.cpp" />
-		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />
