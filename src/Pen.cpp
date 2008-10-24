@@ -1,27 +1,24 @@
-#include "IPen.h"
+#include "Pen.h"
 
 namespace DSPaint
 {
-	class Pen: public IPen
+	int Pen::GetWidth()
 	{
-		int GetWidth()
-		{
-			return _width;
-		}
+		return _width;
+	}
 
-		void SetWidth(int width)
-		{
-			_width = width;
-		}
+	void Pen::SetWidth(int width)
+	{
+		_width = width;
+	}
 
-		int GetColour()
-		{
-			return _colour;
-		}
+	int Pen::GetColour()
+	{
+		return _colour;
+	}
 
-		void SetColour(int colour)
-		{
-			_colour = colour;
-		}
-	};
+	void Pen::SetColour(int colour)
+	{
+		_colour = colour;
+	}
 }

@@ -2,22 +2,8 @@
 #include "Constants.h"
 #include "Canvas.h"
 
-// sets the screen to white
-// this is dependant on whichever screen is currently being set
-void clear()
-{
-	// get the max number of pixels
-	int max = NDS_SCREEN_MAX_WIDTH * NDS_SCREEN_MAX_HEIGHT;
-
-	// set each individual pixel to white
-	for (int i = 0; i < max; i++)
-	{
-		VRAM_A[i] = RGB15(31, 31, 31);
-	}
-}
-
 // entry point
-int main(void)
+int main()
 {
 	// this is the struct for when the DS touches the screen
 	touchPosition touchXY;
@@ -33,9 +19,6 @@ int main(void)
 
 	// draw onto the bottom screen
 	lcdMainOnBottom();
-
-	// clear the screen
-	clear();
 
 	// loop for processing commands
 	while (true)
