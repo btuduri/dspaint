@@ -9,7 +9,7 @@ This page tells you how we like out code to be done.
 
   * Source files and folder names begin with an uppercase letter.
   * Source files either have the extension .cpp/.h depending on whether they are source/header files.
-  * Guards in header files shall be the class name in block caps suffixed with _H.
+  * Guards in header files shall be the class name in block caps suffixed with underscoreH.
 
 = Constants =
 
