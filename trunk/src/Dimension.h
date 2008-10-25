@@ -3,6 +3,9 @@
 
 namespace DSPaint
 {
+	/**
+	 * Contains a width and height.
+	 */
 	typedef struct dimension_t
 	{
 		int width;
