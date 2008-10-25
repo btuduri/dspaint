@@ -20,6 +20,9 @@ int main()
 	// draw onto the bottom screen
 	lcdMainOnBottom();
 
+	DSPaint::Canvas canvas;
+	canvas.Clear();
+
 	// loop for processing commands
 	while (true)
 	{
