@@ -18,7 +18,13 @@ namespace DSPaint
 
 		this->backgroundColour = background;
 
-		this->Clear();
+		// set the video mode
+		// default is black screen
+		videoSetMode(MODE_FB0);
+		vramSetBankA(VRAM_A_LCD);
+
+		// draw onto the bottom screen
+		lcdMainOnBottom();
 	}
 
     DIMENSION Canvas::GetDimensions()
@@ -34,6 +40,16 @@ namespace DSPaint
     void Canvas::SetBackgroundColour(int backgroundColour)
     {
         this->backgroundColour = backgroundColour;
+    }
+
+    int Canvas::GetPixel(int x, int y)
+    {
+    	return VRAM_A[x + y * NDS_SCREEN_MAX_WIDTH];
+    }
+
+    void Canvas::SetPixel(int x, int y, int colour)
+    {
+    	VRAM_A[x + y * NDS_SCREEN_MAX_WIDTH] = colour;
     }
 
     void Canvas::Clear()

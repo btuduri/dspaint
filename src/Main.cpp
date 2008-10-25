@@ -12,14 +12,7 @@ int main()
 	irqInit();
 	irqEnable(IRQ_VBLANK);
 
-	// set the video mode
-	// default is black screen
-	videoSetMode(MODE_FB0);
-	vramSetBankA(VRAM_A_LCD);
-
-	// draw onto the bottom screen
-	lcdMainOnBottom();
-
+	// create a new canvas and clear the screen
 	DSPaint::Canvas canvas;
 	canvas.Clear();
 
@@ -33,7 +26,7 @@ int main()
 		touchXY = touchReadXY();
 
 		// set that pixel to black
-		VRAM_A[touchXY.px + touchXY.py * NDS_SCREEN_MAX_WIDTH] = RGB15(0, 0, 0);
+		canvas.SetPixel(touchXY.px, touchXY.py, RGB15(0, 0, 0));
 	}
 
 	return 0;

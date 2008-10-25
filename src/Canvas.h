@@ -38,6 +38,22 @@ namespace DSPaint
 			void SetBackgroundColour(int backgroundColour);
 
 			/**
+			 * Gets a colour froma pixel.
+			 * @x The x position.
+			 * @y The y position.
+			 * @return The colour at xy.
+			 */
+			int GetPixel(int x, int y);
+
+			/**
+			 * Sets a pixel to a colour.
+			 * @x The x position.
+			 * @y The y position.
+			 * @colour The colour.
+			 */
+			void SetPixel(int x, int y, int colour);
+
+			/**
 			 * Sets the screen to the background.
 			 * This is dependant on whichever screen is currently being set.
 			 */
