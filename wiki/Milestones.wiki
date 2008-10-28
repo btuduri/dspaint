@@ -22,6 +22,7 @@ When committing a change that meets the milestone, prefix the message with 'Mile
   * Implement the IPen interface and the Pen class.
   * Implement the Canvas class.
   * Move structs into classes
+  * Fix issue #2 [http://code.google.com/p/dspaint/issues/detail?id=2 2]
 
 == 0.3 ==
 
