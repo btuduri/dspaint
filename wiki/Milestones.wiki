@@ -23,6 +23,7 @@ When committing a change that meets the milestone, prefix the message with 'Mile
   * Implement the Canvas class.
   * Move structs into classes.
   * Fix issue #2.
+  * Use PALib instead of libnds.
 
 == 0.3 ==
 
