@@ -1,4 +1,4 @@
-#include <nds.h>
+#include <PA9.h>
 #include "Canvas.h"
 #include "Constants.h"
 
