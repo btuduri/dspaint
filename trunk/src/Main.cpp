@@ -5,28 +5,23 @@
 // entry point
 int main()
 {
-	// this is the struct for when the DS touches the screen
-	touchPosition touchXY;
+    // init
+    PA_Init();
 
-	// always needs to have
-	irqInit();
-	irqEnable(IRQ_VBLANK);
+    // init touch screen drawing
+    PA_InitVBL();
 
-	// create a new canvas and clear the screen
+	// create a new canvas
 	DSPaint::Canvas canvas;
-	canvas.Clear();
 
 	// loop for processing commands
 	while (true)
 	{
-		// this is to keep the DS stop wasting 100% CPU in the loop
-		swiWaitForVBlank();
+        // don't waste 100% CPU
+		PA_WaitForVBL();
 
-		// get the position of the touch screen position
-		touchXY = touchReadXY();
-
-		// set that pixel to black
-		canvas.SetPixel(touchXY.px, touchXY.py, RGB15(0, 0, 0));
+		// set current touch screen pixel to black
+        canvas.Draw(RGB15(0, 0, 0));
 	}
 
 	return 0;

@@ -4,63 +4,62 @@
 
 namespace DSPaint
 {
-	Canvas::Canvas(int width, int height, int background)
+	Canvas::Canvas(u16 background)
 	{
-		if (width < 1)
-			width = NDS_SCREEN_MAX_WIDTH;
-		else
-			this->dimension.width = width;
-
-		if (height < 1)
-			height = NDS_SCREEN_MAX_HEIGHT;
-		else
-			this->dimension.height = height;
-
+	    this->dimension.width = NDS_SCREEN_MAX_WIDTH;
+		this->dimension.height = NDS_SCREEN_MAX_HEIGHT;
 		this->backgroundColour = background;
 
-		// set the video mode
-		// default is black screen
-		videoSetMode(MODE_FB0);
-		vramSetBankA(VRAM_A_LCD);
-
-		// draw onto the bottom screen
-		lcdMainOnBottom();
+		this->Clear();
 	}
 
-    DIMENSION Canvas::GetDimensions()
+    Dimension Canvas::GetDimensions()
     {
     	return this->dimension;
     }
 
-    int Canvas::GetBackgroundColour()
+    u16 Canvas::GetBackgroundColour()
     {
         return this->backgroundColour;
     }
 
-    void Canvas::SetBackgroundColour(int backgroundColour)
+    void Canvas::SetBackgroundColour(u16 backgroundColour)
     {
         this->backgroundColour = backgroundColour;
     }
 
-    int Canvas::GetPixel(int x, int y)
+    u16 Canvas::GetPixel(int x, int y)
     {
-    	return VRAM_A[x + y * NDS_SCREEN_MAX_WIDTH];
+    	return PA_Get16bitPixel(0, x, y);
     }
 
-    void Canvas::SetPixel(int x, int y, int colour)
+    void Canvas::SetPixel(s16 x, s16 y, u16 colour)
     {
-    	VRAM_A[x + y * NDS_SCREEN_MAX_WIDTH] = colour;
+        PA_Put16bitPixel(ACTIVE_SCREEN, x, y, colour);
+    }
+
+    void Canvas::Draw(u16 colour)
+    {
+        // put colour as first entry in pallette
+        PA_SetBgPalCol(0, 1, colour);
+
+        // draw using first entry in pallette
+    	PA_16bitDraw(ACTIVE_SCREEN, 1);
     }
 
     void Canvas::Clear()
     {
-    	// get the max number of pixels
-		int max = NDS_SCREEN_MAX_WIDTH * NDS_SCREEN_MAX_HEIGHT;
+        // reinitialise graphics
+        PA_Init16bitBg(ACTIVE_SCREEN, 3);
 
 		// set each individual pixel to the background colour
-		for (int i = 0; i < max; i++)
+		// (this is an extremely slow way to draw)
+		for (int i = 0; i < NDS_SCREEN_MAX_WIDTH; i++)
 		{
-			VRAM_A[i] = this->backgroundColour;
+		    for (int j = 0; j < NDS_SCREEN_MAX_HEIGHT; j++)
+		    {
+                PA_Put16bitPixel(ACTIVE_SCREEN, i, j, backgroundColour);
+		    }
 		}
     }
 }

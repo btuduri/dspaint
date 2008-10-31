@@ -10,7 +10,7 @@ namespace DSPaint
 	{
 		int width;
 		int height;
-	} DIMENSION;
+	} Dimension;
 }
 
 #endif
