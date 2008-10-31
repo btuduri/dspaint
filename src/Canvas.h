@@ -9,8 +9,8 @@ namespace DSPaint
     class Canvas
     {
         private:
-			DIMENSION dimension;
-			int backgroundColour;
+			Dimension dimension;
+			u16 backgroundColour;
 
         public:
 			/**
@@ -19,23 +19,23 @@ namespace DSPaint
 			 * @height The height of the canvas.
 			 * @background The background colour.
 			 */
-			Canvas(int width = NDS_SCREEN_MAX_WIDTH, int height = NDS_SCREEN_MAX_HEIGHT, int background = RGB15(31, 31, 31));
+			Canvas(u16 background = PA_RGB(31,31,31));
 
 			/**
 			 * Gets the dimensions of this canvas.
 			 */
-			DIMENSION GetDimensions();
+			Dimension GetDimensions();
 
 			/**
 			 * Gets the background colour of this canvas.
 			 */
-			int GetBackgroundColour();
+			u16 GetBackgroundColour();
 
 			/**
 			 * Sets the background colour of this canvas.
 			 * @backgroundColour The background colour of this canvas.
 			 */
-			void SetBackgroundColour(int backgroundColour);
+			void SetBackgroundColour(u16 backgroundColour);
 
 			/**
 			 * Gets a colour froma pixel.
@@ -43,7 +43,7 @@ namespace DSPaint
 			 * @y The y position.
 			 * @return The colour at xy.
 			 */
-			int GetPixel(int x, int y);
+			u16 GetPixel(int x, int y);
 
 			/**
 			 * Sets a pixel to a colour.
@@ -51,7 +51,13 @@ namespace DSPaint
 			 * @y The y position.
 			 * @colour The colour.
 			 */
-			void SetPixel(int x, int y, int colour);
+			void SetPixel(s16 x, s16 y, u16 colour);
+
+			/**
+			 * Draws on the canvas at the position of the stylus.
+			 * @colour The colour.
+			 */
+			void Draw(u16 colour);
 
 			/**
 			 * Sets the screen to the background.
