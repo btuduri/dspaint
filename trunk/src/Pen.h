@@ -8,10 +8,33 @@ namespace DSPaint
 	class Pen: public IPen
 	{
 		public:
-			virtual int GetWidth() = 0;
-			virtual void SetWidth(int width) = 0;
-			virtual int GetColour() = 0;
-			virtual void SetColour(int colour) = 0;
+            /**
+			 * Creates a new pen.
+			 * @colour The colour of the pen.
+			 */
+            Pen(u16 colour = PA_RGB(0,0,0));
+
+            /**
+			 * Gets the width of the pen.
+			 */
+			virtual int GetWidth();
+
+            /**
+			 * Sets the width of the pen.
+			 * @width The width to set.
+			 */
+			virtual void SetWidth(int width);
+
+            /**
+			 * Gets the colour of the pen.
+			 */
+			virtual u16 GetColour();
+
+            /**
+			 * Sets the colour of the pen.
+			 * @colour The colour to set.
+			 */
+			virtual void SetColour(u16 colour);
 	};
 }
 

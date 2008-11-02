@@ -1,24 +1,30 @@
+#include <PA9.h>
 #include "Pen.h"
 
 namespace DSPaint
 {
+    Pen::Pen(u16 colour)
+	{
+	    this->SetColour(colour);
+	}
+
 	int Pen::GetWidth()
 	{
-		return _width;
+		return this->_width;
 	}
 
 	void Pen::SetWidth(int width)
 	{
-		_width = width;
+		this->_width = width;
 	}
 
-	int Pen::GetColour()
+	u16 Pen::GetColour()
 	{
-		return _colour;
+		return this->_colour;
 	}
 
-	void Pen::SetColour(int colour)
+	void Pen::SetColour(u16 colour)
 	{
-		_colour = colour;
+		this->_colour = colour;
 	}
 }
