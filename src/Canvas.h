@@ -3,6 +3,7 @@
 
 #include "Constants.h"
 #include "Dimension.h"
+#include "Pen.h"
 
 namespace DSPaint
 {
@@ -15,11 +16,9 @@ namespace DSPaint
         public:
 			/**
 			 * Creates a new canvas. This also sets the screen to the background colour.
-			 * @width The width of the canvas.
-			 * @height The height of the canvas.
-			 * @background The background colour.
+			 * @backgroundColour The background colour.
 			 */
-			Canvas(u16 background = PA_RGB(31,31,31));
+			Canvas(u16 backgroundColour = PA_RGB(31,31,31));
 
 			/**
 			 * Gets the dimensions of this canvas.
@@ -38,7 +37,7 @@ namespace DSPaint
 			void SetBackgroundColour(u16 backgroundColour);
 
 			/**
-			 * Gets a colour froma pixel.
+			 * Gets a colour from a pixel.
 			 * @x The x position.
 			 * @y The y position.
 			 * @return The colour at xy.
@@ -49,19 +48,18 @@ namespace DSPaint
 			 * Sets a pixel to a colour.
 			 * @x The x position.
 			 * @y The y position.
-			 * @colour The colour.
+			 * @pen The pen to use.
 			 */
-			void SetPixel(s16 x, s16 y, u16 colour);
+			void SetPixel(s16 x, s16 y, Pen pen);
 
 			/**
 			 * Draws on the canvas at the position of the stylus.
-			 * @colour The colour.
+			 * @pen The pen to use.
 			 */
-			void Draw(u16 colour);
+			void Draw(Pen pen);
 
 			/**
-			 * Sets the screen to the background.
-			 * This is dependant on whichever screen is currently being set.
+			 * Sets the canvas to the background.
 			 */
 			void Clear();
     };

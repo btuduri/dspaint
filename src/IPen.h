@@ -7,7 +7,7 @@ namespace DSPaint
 	{
 		protected:
 			int _width;
-			int _colour;
+			u16 _colour;
 
 		public:
 			/**
@@ -24,13 +24,13 @@ namespace DSPaint
 			/**
 			 * Gets the colour of the pen.
 			 */
-			virtual int GetColour() = 0;
+			virtual u16 GetColour() = 0;
 
 			/**
 			 * Sets the colour of the pen.
 			 * @colour The colour to set.
 			 */
-			virtual void SetColour(int colour) = 0;
+			virtual void SetColour(u16 colour) = 0;
 	};
 }
 

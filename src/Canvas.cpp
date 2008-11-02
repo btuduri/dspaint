@@ -1,14 +1,15 @@
 #include <PA9.h>
 #include "Canvas.h"
 #include "Constants.h"
+#include "Pen.h"
 
 namespace DSPaint
 {
-	Canvas::Canvas(u16 background)
+	Canvas::Canvas(u16 backgroundColour)
 	{
 	    this->dimension.width = NDS_SCREEN_MAX_WIDTH;
 		this->dimension.height = NDS_SCREEN_MAX_HEIGHT;
-		this->backgroundColour = background;
+		this->backgroundColour = backgroundColour;
 
 		this->Clear();
 	}
@@ -33,15 +34,15 @@ namespace DSPaint
     	return PA_Get16bitPixel(0, x, y);
     }
 
-    void Canvas::SetPixel(s16 x, s16 y, u16 colour)
+    void Canvas::SetPixel(s16 x, s16 y, Pen pen)
     {
-        PA_Put16bitPixel(ACTIVE_SCREEN, x, y, colour);
+        PA_Put16bitPixel(ACTIVE_SCREEN, x, y, pen.GetColour());
     }
 
-    void Canvas::Draw(u16 colour)
+    void Canvas::Draw(Pen pen)
     {
         // put colour as first entry in pallette
-        PA_SetBgPalCol(0, 1, colour);
+        PA_SetBgPalCol(0, 1, pen.GetColour());
 
         // draw using first entry in pallette
     	PA_16bitDraw(ACTIVE_SCREEN, 1);
