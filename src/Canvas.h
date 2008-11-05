@@ -3,7 +3,7 @@
 
 #include "Constants.h"
 #include "Dimension.h"
-#include "Pen.h"
+//#include "Pen.h"
 
 namespace DSPaint
 {
@@ -50,13 +50,13 @@ namespace DSPaint
 			 * @y The y position.
 			 * @pen The pen to use.
 			 */
-			void SetPixel(s16 x, s16 y, Pen pen);
+			void SetPixel(s16 x, s16 y, u16 colour);
 
 			/**
 			 * Draws on the canvas at the position of the stylus.
 			 * @pen The pen to use.
 			 */
-			void Draw(Pen pen);
+	//		void Draw(Pen pen);
 
 			/**
 			 * Sets the canvas to the background.
