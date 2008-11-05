@@ -1,5 +1,5 @@
 #ifndef DIMENSION_H
-#define DIMENSION_h
+#define DIMENSION_H
 
 namespace DSPaint
 {

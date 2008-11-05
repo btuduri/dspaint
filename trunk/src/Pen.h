@@ -35,6 +35,14 @@ namespace DSPaint
 			 * @colour The colour to set.
 			 */
 			virtual void SetColour(u16 colour);
+
+			/**
+			 * Draws on the canvas using this pen.
+			 * @canvas The canvas to draw on.
+			 * @x The X coordinate.
+			 * @y The Y coordinate.
+			 */
+			virtual void Draw(Canvas canvas, int x, int y);
 	};
 }
 

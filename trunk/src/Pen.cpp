@@ -1,4 +1,5 @@
 #include <PA9.h>
+
 #include "Pen.h"
 
 namespace DSPaint
@@ -26,5 +27,10 @@ namespace DSPaint
 	void Pen::SetColour(u16 colour)
 	{
 		this->_colour = colour;
+	}
+
+	void Pen::Draw(Canvas canvas, int x, int y)
+	{
+		canvas.SetPixel(x, y, this->_colour);
 	}
 }

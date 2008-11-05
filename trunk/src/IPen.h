@@ -1,6 +1,8 @@
 #ifndef IPEN_H
 #define IPEN_H
 
+#include "Canvas.h"
+
 namespace DSPaint
 {
 	class IPen
@@ -31,6 +33,14 @@ namespace DSPaint
 			 * @colour The colour to set.
 			 */
 			virtual void SetColour(u16 colour) = 0;
+
+			/**
+			 * Draws on the canvas using this pen.
+			 * @canvas The canvas to draw on.
+			 * @x The X coordinate.
+			 * @y The Y coordinate.
+			 */
+			virtual void Draw(Canvas canvas, int x, int y) = 0;
 	};
 }
 

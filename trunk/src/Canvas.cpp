@@ -1,7 +1,5 @@
 #include <PA9.h>
 #include "Canvas.h"
-#include "Constants.h"
-#include "Pen.h"
 
 namespace DSPaint
 {
@@ -34,11 +32,11 @@ namespace DSPaint
     	return PA_Get16bitPixel(0, x, y);
     }
 
-    void Canvas::SetPixel(s16 x, s16 y, Pen pen)
+    void Canvas::SetPixel(s16 x, s16 y, u16 colour)
     {
-        PA_Put16bitPixel(ACTIVE_SCREEN, x, y, pen.GetColour());
+        PA_Put16bitPixel(ACTIVE_SCREEN, x, y, colour);
     }
-
+/*
     void Canvas::Draw(Pen pen)
     {
         // put colour as first entry in pallette
@@ -47,7 +45,7 @@ namespace DSPaint
         // draw using first entry in pallette
     	PA_16bitDraw(ACTIVE_SCREEN, 1);
     }
-
+*/
     void Canvas::Clear()
     {
         // reinitialise graphics
