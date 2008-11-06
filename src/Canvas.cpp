@@ -12,7 +12,7 @@ namespace DSPaint
 		this->Clear();
 	}
 
-    Dimension Canvas::GetDimensions()
+    DIMENSION Canvas::GetDimensions()
     {
     	return this->dimension;
     }
@@ -36,16 +36,7 @@ namespace DSPaint
     {
         PA_Put16bitPixel(ACTIVE_SCREEN, x, y, colour);
     }
-/*
-    void Canvas::Draw(Pen pen)
-    {
-        // put colour as first entry in pallette
-        PA_SetBgPalCol(0, 1, pen.GetColour());
 
-        // draw using first entry in pallette
-    	PA_16bitDraw(ACTIVE_SCREEN, 1);
-    }
-*/
     void Canvas::Clear()
     {
         // reinitialise graphics
