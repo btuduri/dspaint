@@ -3,14 +3,13 @@
 
 #include "Constants.h"
 #include "Dimension.h"
-//#include "Pen.h"
 
 namespace DSPaint
 {
     class Canvas
     {
         private:
-			Dimension dimension;
+			DIMENSION dimension;
 			u16 backgroundColour;
 
         public:
@@ -23,7 +22,7 @@ namespace DSPaint
 			/**
 			 * Gets the dimensions of this canvas.
 			 */
-			Dimension GetDimensions();
+			DIMENSION GetDimensions();
 
 			/**
 			 * Gets the background colour of this canvas.
@@ -51,12 +50,6 @@ namespace DSPaint
 			 * @pen The pen to use.
 			 */
 			void SetPixel(s16 x, s16 y, u16 colour);
-
-			/**
-			 * Draws on the canvas at the position of the stylus.
-			 * @pen The pen to use.
-			 */
-	//		void Draw(Pen pen);
 
 			/**
 			 * Sets the canvas to the background.
