@@ -14,7 +14,7 @@ namespace DSPaint
 		return this->_width;
 	}
 
-	void Pen::SetWidth(int width)
+	void Pen::SetWidth(s8 width)
 	{
 		this->_width = width;
 	}
@@ -29,8 +29,13 @@ namespace DSPaint
 		this->_colour = colour;
 	}
 
-	void Pen::Draw(Canvas canvas, int x, int y)
+	void Pen::Draw(Canvas canvas, s16 x, s16 y)
 	{
 		canvas.SetPixel(x, y, this->_colour);
+	}
+
+	void Pen::DrawLine(Canvas canvas, s16 x1, s16 y1, s16 x2, s16 y2)
+	{
+
 	}
 }

@@ -23,7 +23,7 @@ namespace DSPaint
 			 * Sets the width of the pen.
 			 * @width The width to set.
 			 */
-			virtual void SetWidth(int width);
+			virtual void SetWidth(s8 width);
 
             /**
 			 * Gets the colour of the pen.
@@ -42,7 +42,17 @@ namespace DSPaint
 			 * @x The X coordinate.
 			 * @y The Y coordinate.
 			 */
-			virtual void Draw(Canvas canvas, int x, int y);
+			virtual void Draw(Canvas canvas, s16 x, s16 y);
+
+			/**
+			 * Draws a line onto the canvas.
+			 * @canvas The canvas to draw on.
+			 * @x1 First X point.
+			 * @y1 First Y point.
+			 * @x2 Second X point.
+			 * @y2 Second Y point.
+			 */
+			virtual void DrawLine(Canvas canvas, s16 x1, s16 y1, s16 x2, s16 y2);
 	};
 }
 
