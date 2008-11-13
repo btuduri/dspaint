@@ -14,6 +14,11 @@ namespace DSPaint
 			 */
             Pen(u16 colour = PA_RGB(0,0,0));
 
+			/**
+			 * Destroys the pen.
+			 */
+            virtual ~Pen();
+
             /**
 			 * Gets the width of the pen.
 			 */
