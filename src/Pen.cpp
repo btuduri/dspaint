@@ -9,6 +9,10 @@ namespace DSPaint
 	    this->SetColour(colour);
 	}
 
+	Pen::~Pen()
+	{
+	}
+
 	int Pen::GetWidth()
 	{
 		return this->_width;
@@ -36,6 +40,54 @@ namespace DSPaint
 
 	void Pen::DrawLine(Canvas canvas, s16 x1, s16 y1, s16 x2, s16 y2)
 	{
+		int w = _width;
+		s8 low = (w >> 1) - w + 1;
+		s8 high = (w >> 1) + 1;
+		s16 i, j;
+		s16 xx1, xx2, yy1, yy2;
 
+		for (i = low; i < high; i++){
+			for (j = low; j < high; j++){
+				if ((x1 + i >= 0) && (y1 + j >= 0) && (x1 + i < 256) && (y1 + j < 192)){
+					PA_Put16bitPixel(ACTIVE_SCREEN, x1 + i, y1 + j, _colour);
+				}
+			}
+		}
+
+
+		for (i = low; i < high; i++){
+			j = low;
+			xx1 = x1+i; xx2 = x2+i; yy1 = y1+j; yy2 = y2+j;
+			while(xx1 < 0) xx1++;	while(xx1 > 255) xx1--;
+			while(xx2 < 0) xx2++;	while(xx2 > 255) xx2--;
+			while(yy1 < 0) yy1++;	while(yy1 > 191) yy1--;
+			while(yy2 < 0) yy2++;	while(yy2 > 191) yy2--;
+			PA_Draw16bitLine(ACTIVE_SCREEN, xx1, yy1, xx2, yy2, _colour);
+
+			j = high-1;
+			xx1 = x1+i; xx2 = x2+i; yy1 = y1+j; yy2 = y2+j;
+			while(xx1 < 0) xx1++;	while(xx1 > 255) xx1--;
+			while(xx2 < 0) xx2++;	while(xx2 > 255) xx2--;
+			while(yy1 < 0) y1++;	while(yy1 > 191) yy1--;
+			while(yy2 < 0) yy2++;	while(yy2 > 191) yy2--;
+			PA_Draw16bitLine(ACTIVE_SCREEN, xx1, yy1, xx2, yy2, _colour);
+		}
+
+		for (j = low; j < high; j++){
+			i = low;
+			xx1 = x1+i; xx2 = x2+i; yy1 = y1+j; yy2 = y2+j;
+			while(xx1 < 0) xx1++;	while(xx1 > 255) xx1--;
+			while(xx2 < 0) xx2++;	while(xx2 > 255) xx2--;
+			while(yy1 < 0) yy1++;	while(yy1 > 191) yy1--;
+			while(yy2 < 0) yy2++;	while(yy2 > 191) yy2--;
+			PA_Draw16bitLine(ACTIVE_SCREEN, xx1, yy1, xx2, yy2, _colour);
+			i = high-1;
+			xx1 = x1+i; xx2 = x2+i; yy1 = y1+j; yy2 = y2+j;
+			while(xx1 < 0) xx1++;	while(xx1 > 255) xx1--;
+			while(xx2 < 0) xx2++;	while(xx2 > 255) xx2--;
+			while(yy1 < 0) yy1++;	while(yy1 > 191) yy1--;
+			while(yy2 < 0) yy2++;	while(yy2 > 191) yy2--;
+			PA_Draw16bitLine(ACTIVE_SCREEN, xx1, yy1, xx2, yy2, _colour);
+		}
 	}
 }
