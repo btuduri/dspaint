@@ -40,6 +40,7 @@ namespace DSPaint
 
 	void Pen::DrawLine(Canvas canvas, s16 x1, s16 y1, s16 x2, s16 y2)
 	{
+		// currently does not work at the moment as it needs a lot of code rewrite
 		int w = _width;
 		s8 low = (w >> 1) - w + 1;
 		s8 high = (w >> 1) + 1;
