@@ -8,20 +8,20 @@ namespace DSPaint
 	class IPen
 	{
 		protected:
-			int _width;
+			u8 _width;
 			u16 _colour;
 
 		public:
 			/**
 			 * Gets the width of the pen.
 			 */
-			virtual int GetWidth() = 0;
+			virtual u8 GetWidth() = 0;
 
 			/**
 			 * Sets the width of the pen.
 			 * @width The width to set.
 			 */
-			virtual void SetWidth(s8 width) = 0;
+			virtual void SetWidth(u8 width) = 0;
 
 			/**
 			 * Gets the colour of the pen.

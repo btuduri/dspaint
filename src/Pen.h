@@ -22,13 +22,13 @@ namespace DSPaint
             /**
 			 * Gets the width of the pen.
 			 */
-			virtual int GetWidth();
+			virtual u8 GetWidth();
 
             /**
 			 * Sets the width of the pen.
 			 * @width The width to set.
 			 */
-			virtual void SetWidth(s8 width);
+			virtual void SetWidth(u8 width);
 
             /**
 			 * Gets the colour of the pen.
