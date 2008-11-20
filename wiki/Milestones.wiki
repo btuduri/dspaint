@@ -10,23 +10,23 @@ When committing a change that meets the milestone, prefix the message with 'Mile
 
 == 0.1 ==
 
-  * Compiles and runs.
-  * Both screens will appear white
-  * Able to draw in black using the stylus
-  * Does not need to do anything else
+  * ~~Compiles and runs.~~
+  * ~~Both screens will appear white~~
+  * ~~Able to draw in black using the stylus~~
+  * ~~Does not need to do anything else~~
 
 == 0.2 ==
 
-  * Refactoring
-  * Change the namespace to DSPaint
-  * Implement the IPen interface and the Pen class.
-  * Implement the Canvas class.
-  * Move structs into classes.
-  * Fix issue #2.
-  * Use PALib instead of libnds.
+  * ~~Refactoring~~
+  * ~~Change the namespace to DSPaint~~
+  * ~~Implement the IPen interface and the Pen class.~~
+  * ~~Implement the Canvas class.~~
+  * ~~Move structs into classes.~~
+  * ~~Fix issue #2.~~
+  * ~~Use PALib instead of libnds.~~
 
 == 0.3 ==
 
   * Clear the screen using a button and a confirmation prompt
   * Change pen width
-  * Create a draw line method in the IPen interface
+  * ~~Create a draw line method in the IPen interface~~
