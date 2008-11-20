@@ -42,10 +42,10 @@ include $(DEVKITARM)/ds_rules
 # SOURCES is a list of directories containing source code
 # INCLUDES is a list of directories containing extra header files
 #---------------------------------------------------------------------------------
-TARGET	:=	DSPaint
-BUILD		:=	build
-SOURCES	:=	gfx src data
-INCLUDES	:=	include build data
+TARGET		:= DSPaint
+BUILD		:= build
+SOURCES		:= src src/woopsi
+INCLUDES	:= src/woopsi
 
 EXPORT_DIR := /c/ndsexamples/
 #---------------------------------------------------------------------------------

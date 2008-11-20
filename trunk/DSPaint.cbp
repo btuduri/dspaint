@@ -40,8 +40,12 @@
 		<Unit filename="src/Dimension.h" />
 		<Unit filename="src/IPen.h" />
 		<Unit filename="src/Main.cpp" />
+		<Unit filename="src/Mode.h" />
+		<Unit filename="src/Options.h" />
 		<Unit filename="src/Pen.cpp" />
 		<Unit filename="src/Pen.h" />
+		<Unit filename="src/WindowManager.cpp" />
+		<Unit filename="src/WindowManager.h" />
 		<Extensions>
 			<envvars />
 			<code_completion />
