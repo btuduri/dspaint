@@ -52,13 +52,20 @@ int main()
 				PA_oldy[ACTIVE_SCREEN] = Stylus.Y;
 			}
 
-			//pen.DrawLine(canvas, Stylus.X, Stylus.Y, PA_oldx[ACTIVE_SCREEN], PA_oldy[ACTIVE_SCREEN]);
-			PA_Draw16bitLineEx(ACTIVE_SCREEN, Stylus.X, Stylus.Y, PA_oldx[ACTIVE_SCREEN], PA_oldy[ACTIVE_SCREEN], PA_RGB(0, 0, 0), PA_drawsize[ACTIVE_SCREEN]);
+			pen.DrawLine(canvas, Stylus.X, Stylus.Y, PA_oldx[ACTIVE_SCREEN], PA_oldy[ACTIVE_SCREEN]);
+			//PA_Draw16bitLineEx(ACTIVE_SCREEN, Stylus.X, Stylus.Y, PA_oldx[ACTIVE_SCREEN], PA_oldy[ACTIVE_SCREEN], PA_RGB(0, 0, 0), PA_drawsize[ACTIVE_SCREEN]);
 		}
 
 		PA_oldx[ACTIVE_SCREEN] = Stylus.X;
 		PA_oldy[ACTIVE_SCREEN] = Stylus.Y;
 		PA_olddowntime[ACTIVE_SCREEN] = Stylus.Downtime;
+
+		// put pad key presses here for actions
+		if (Pad.Newpress.L || Pad.Released.R)
+		{
+			//TODO: Create a dialog to confirm clear screen
+			canvas.Clear();
+		}
 	}
 
 	return 0;
