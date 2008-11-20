@@ -3,15 +3,20 @@
 #include "Constants.h"
 #include "Canvas.h"
 #include "Pen.h"
+#include "WindowManager.h"
 
 // entry point
-int main()
+int main(int argc, char* argv[])
 {
     // Init
     PA_Init();
 
     // Init touch screen drawing
     PA_InitVBL();
+
+    // Init window manager
+    DSPaint::WindowManager wm;
+    wm.main(argc, argv);
 
 	// Create a new canvas
 	DSPaint::Canvas canvas;
