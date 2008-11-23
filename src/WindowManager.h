@@ -1,7 +1,9 @@
 #ifndef WINDOW_MANAGER_H
 #define WINDOW_MANAGER_H
 
+#include <stdarg.h>
 #include "woopsi.h"
+#include "Constants.h"
 
 namespace DSPaint
 {
@@ -10,7 +12,7 @@ namespace DSPaint
         public:
             void startup();
             void shutdown();
-            void ShowMessageBox();
+            int ShowMessageBox(const char* message, int args, ...);
     };
 }
 #endif

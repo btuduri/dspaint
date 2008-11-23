@@ -1,9 +1,10 @@
 #include <PA9.h>
 
-#include "Constants.h"
 #include "Canvas.h"
 #include "Pen.h"
 #include "WindowManager.h"
+
+#include "woopsi.h"
 
 // entry point
 int main(int argc, char* argv[])
@@ -16,7 +17,8 @@ int main(int argc, char* argv[])
 
     // Init window manager
     DSPaint::WindowManager wm;
-    wm.main(argc, argv);
+    //wm.main(argc, argv);
+    wm.ShowMessageBox("Are you sure you want to cancel drawing?", 3, "Yes", "No", "Cancel");
 
 	// Create a new canvas
 	DSPaint::Canvas canvas;
@@ -63,7 +65,6 @@ int main(int argc, char* argv[])
 		PA_oldx[ACTIVE_SCREEN] = Stylus.X;
 		PA_oldy[ACTIVE_SCREEN] = Stylus.Y;
 		PA_olddowntime[ACTIVE_SCREEN] = Stylus.Downtime;
-
 		// put pad key presses here for actions
 		if (Pad.Newpress.L || Pad.Released.R)
 		{
