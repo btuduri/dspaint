@@ -2,6 +2,7 @@
 #include "woopsiheaders.h"
 
 using namespace WoopsiUI;
+
 namespace DSPaint
 {
     void WindowManager::startup()
@@ -41,7 +42,7 @@ namespace DSPaint
         Woopsi::shutdown();
     }
 
-    int WindowManager::ShowMessageBox(const char* message, int args, ...)
+    int WindowManager::ShowMessageBox(const char* message, ...)
     {
     	Woopsi::startup();
 
@@ -58,17 +59,27 @@ namespace DSPaint
         window->addGadget(textbox);
 
 		// dynamically add buttons
+		// store stuff for later on
     	va_list buttons;
     	int height = 4;
+    	char* c;
+    	int i = 0;
 
-    	va_start(buttons, args);
-    	for (int i = 0; i < args; i++)
+		// start the list
+    	va_start(buttons, message);
+
+		// make sure the va_arg contains something
+		// and the buttons dont exceed 8
+    	while ((c = va_arg(buttons, char*)) != NULL && i++ < 8)
     	{
-    		Button *b = new Button(160, height, 92, 20, va_arg(buttons, char*));
+    		// add buttons to dialog
+    		Button *b = new Button(160, height, 92, 20, c);
     		window->addGadget(b);
 
     		height += 22;
     	}
+
+		// end the list
     	va_end(buttons);
 
         enableDrawing();

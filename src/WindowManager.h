@@ -12,7 +12,14 @@ namespace DSPaint
         public:
             void startup();
             void shutdown();
-            int ShowMessageBox(const char* message, int args, ...);
+
+            /**
+             * Displays a message box with buttons.
+             * @message The message to display.
+             * @... A list of char* for the buttons up to a limit of 8.
+             * @return A int between 1 and the number of arguments otherwise 0 if cancelled.
+             */
+            int ShowMessageBox(const char* message, ...);
     };
 }
 #endif
