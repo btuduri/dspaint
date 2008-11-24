@@ -73,7 +73,9 @@ namespace DSPaint
     	while ((c = va_arg(buttons, char*)) != NULL && i++ < 8)
     	{
     		// add buttons to dialog
-    		Button *b = new Button(160, height, 92, 20, c);
+    		Button* b = new Button(160, height, 92, 20, c);
+    		b->setRefcon(i);
+    		b->setEventHandler(this);
     		window->addGadget(b);
 
     		height += 22;
@@ -86,6 +88,12 @@ namespace DSPaint
 
         draw();
 
-		return 0;
+		return buttonReturn;
+    }
+
+    bool WindowManager::handleEvent(const EventArgs& e)
+    {
+        this->buttonReturn = e.gadget->getRefcon();
+        return true;
     }
 }
