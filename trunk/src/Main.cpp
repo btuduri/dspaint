@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
     // Init window manager
     DSPaint::WindowManager wm;
     //wm.main(argc, argv);
-    wm.ShowMessageBox("Are you sure you want to cancel drawing?", 3, "Yes", "No", "Cancel");
+    wm.ShowMessageBox("Are you sure you want to cancel drawing?", "Yes", "No", "Cancel");
 
 	// Create a new canvas
 	DSPaint::Canvas canvas;
