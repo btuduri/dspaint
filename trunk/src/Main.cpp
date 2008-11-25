@@ -2,6 +2,7 @@
 
 #include "Canvas.h"
 #include "Pen.h"
+#include "PromptManager.h"
 
 // entry point
 int main(int argc, char* argv[])
@@ -13,9 +14,20 @@ int main(int argc, char* argv[])
     PA_InitVBL();
 
     // Init the console
-   // PA_InitText (SUB_SCREEN, 0);
-   // PA_SetTextCol(1,31,31,31);
-   // PA_OutputSimpleText(1,0,0,"This is an example");
+    PA_InitText(SUB_SCREEN, 0);
+    PA_SetTextCol(1, 31, 31, 31);
+
+	// Display a example prompt
+    DSPaint::PromptManager::ShowMessagePrompt(
+		"Press a button and do something and see if this text wraps round",
+		"I",
+		"am",
+		"a",
+		"very",
+		"long",
+		"word",
+		"!!!"
+	);
 
 	// Create a new canvas
 	DSPaint::Canvas canvas;
