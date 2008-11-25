@@ -2,9 +2,6 @@
 
 #include "Canvas.h"
 #include "Pen.h"
-#include "WindowManager.h"
-
-#include "woopsi.h"
 
 // entry point
 int main(int argc, char* argv[])
@@ -15,10 +12,10 @@ int main(int argc, char* argv[])
     // Init touch screen drawing
     PA_InitVBL();
 
-    // Init window manager
-    DSPaint::WindowManager wm;
-    //wm.main(argc, argv);
-    wm.ShowMessageBox("Are you sure you want to cancel drawing?", "Yes", "No", "Cancel");
+    // Init the console
+    PA_InitText (SUB_SCREEN, 0);
+    PA_SetTextCol(1,31,31,31);
+    PA_OutputSimpleText(1,0,0,"This is an example");
 
 	// Create a new canvas
 	DSPaint::Canvas canvas;
