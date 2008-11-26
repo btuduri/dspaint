@@ -19,6 +19,11 @@ namespace DSPaint
             ~ModeNormal();
 
             /**
+			 * Return the name of the mode.
+			 */
+			virtual char* GetModeName();
+
+            /**
 			 * Method to execute on A press.
 			 */
 			virtual void A();

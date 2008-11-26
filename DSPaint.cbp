@@ -8,8 +8,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin\Debug\DSPaint" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Debug\" />
+				<Option output="bin/Debug/DSPaint" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -17,8 +17,8 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin\Release\DSPaint" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Release\" />
+				<Option output="bin/Release/DSPaint" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -34,18 +34,23 @@
 		</Compiler>
 		<Unit filename="DSPaint.layout" />
 		<Unit filename="Makefile" />
-		<Unit filename="src\Canvas.cpp" />
-		<Unit filename="src\Canvas.h" />
-		<Unit filename="src\Constants.h" />
-		<Unit filename="src\Dimension.h" />
-		<Unit filename="src\IPen.h" />
-		<Unit filename="src\Main.cpp" />
-		<Unit filename="src\Mode.h" />
-		<Unit filename="src\Options.h" />
-		<Unit filename="src\Pen.cpp" />
-		<Unit filename="src\Pen.h" />
-		<Unit filename="src\PromptManager.cpp" />
-		<Unit filename="src\PromptManager.h" />
+		<Unit filename="src/Canvas.cpp" />
+		<Unit filename="src/Canvas.h" />
+		<Unit filename="src/Constants.h" />
+		<Unit filename="src/Dimension.h" />
+		<Unit filename="src/DrawingMode.h" />
+		<Unit filename="src/IOperationalMode.h" />
+		<Unit filename="src/IPen.h" />
+		<Unit filename="src/Main.cpp" />
+		<Unit filename="src/ModeManager.cpp" />
+		<Unit filename="src/ModeManager.h" />
+		<Unit filename="src/ModeNormal.cpp" />
+		<Unit filename="src/ModeNormal.h" />
+		<Unit filename="src/Options.h" />
+		<Unit filename="src/Pen.cpp" />
+		<Unit filename="src/Pen.h" />
+		<Unit filename="src/PromptManager.cpp" />
+		<Unit filename="src/PromptManager.h" />
 		<Extensions>
 			<envvars />
 			<code_completion />

@@ -13,6 +13,7 @@ namespace DSPaint
 			static bool isInitialised;
 		public:
 			static int ShowMessagePrompt(const char* message, ...);
+			static void ShowMode(const char* modeName);
 	};
 }
 

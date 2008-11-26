@@ -33,4 +33,9 @@ namespace DSPaint
 
 		return 0;
 	}
+
+	void PromptManager::ShowMode(const char* modeName)
+	{
+	    PA_BoxText(1, 0, 22, 31, 23, modeName, 100);
+	}
 }

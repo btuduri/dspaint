@@ -2,6 +2,7 @@
 
 #include "Canvas.h"
 #include "ModeManager.h"
+#include "IOperationalMode.h"
 #include "Pen.h"
 #include "PromptManager.h"
 
@@ -20,6 +21,9 @@ int main(int argc, char* argv[])
 
     // Create mode manager
     DSPaint::ModeManager mm;
+    DSPaint::IOperationalMode** modeList;
+    modeList = mm.GetModeList();
+    DSPaint::PromptManager::ShowMode(mm.GetCurrentModeName());
 
 	// Display a example prompt
     DSPaint::PromptManager::ShowMessagePrompt(
@@ -83,6 +87,7 @@ int main(int argc, char* argv[])
 		{
 			//TODO: Create a dialog to confirm clear screen
 			canvas.Clear();
+            DSPaint::PromptManager::ShowMode(mm.GetCurrentModeName());
 		}
 	}
 
