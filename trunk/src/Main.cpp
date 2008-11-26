@@ -1,6 +1,7 @@
 #include <PA9.h>
 
 #include "Canvas.h"
+#include "ModeManager.h"
 #include "Pen.h"
 #include "PromptManager.h"
 
@@ -16,6 +17,9 @@ int main(int argc, char* argv[])
     // Init the console
     PA_InitText(SUB_SCREEN, 0);
     PA_SetTextCol(1, 31, 31, 31);
+
+    // Create mode manager
+    DSPaint::ModeManager mm;
 
 	// Display a example prompt
     DSPaint::PromptManager::ShowMessagePrompt(

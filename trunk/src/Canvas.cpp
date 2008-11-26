@@ -1,4 +1,3 @@
-#include <PA9.h>
 #include "Canvas.h"
 
 namespace DSPaint
