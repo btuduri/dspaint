@@ -35,9 +35,19 @@ namespace DSPaint
             IOperationalMode* GetCurrentMode();
 
             /**
+             * Get the current mode's name.
+             */
+            char* GetCurrentModeName();
+
+            /**
              * Get a list of all modes.
              */
             IOperationalMode** GetModeList();
+
+            /**
+             * Get number of modes.
+             */
+            int GetNumberOfModes();
 	};
 }
 

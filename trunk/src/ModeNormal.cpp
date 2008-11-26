@@ -7,7 +7,7 @@ namespace DSPaint
 	*/
     ModeNormal::ModeNormal()
     {
-
+        this->modeName = "Normal Mode";
     }
 
     /**
@@ -17,6 +17,14 @@ namespace DSPaint
     {
 
     }
+
+    /**
+	 * Return the name of the mode.
+	 */
+	char* ModeNormal::GetModeName()
+	{
+	    return this->modeName;
+	}
 
     /**
 	* Method to execute on A press.

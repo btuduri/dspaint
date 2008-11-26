@@ -7,7 +7,15 @@ namespace DSPaint
 {
 	class IOperationalMode
 	{
+	    protected:
+	    char* modeName;
+
 		public:
+            /**
+			 * Return the name of the mode.
+			 */
+			virtual char* GetModeName() = 0;
+
 			/**
 			 * Method to execute on A press.
 			 */
