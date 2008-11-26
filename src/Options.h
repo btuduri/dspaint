@@ -1,4 +1,4 @@
-#include "Mode.h"
+#include "DrawingMode.h"
 
 namespace DSPaint
 {
@@ -20,13 +20,13 @@ namespace DSPaint
 			/**
 			 * Gets the current mode.
 			 */
-			Mode GetMode();
+			DrawingMode GetDrawingMode();
 
 			/**
 			 * Sets the current mode.
 			 * @mode The mode to use.
 			 */
-			void SetMode(Mode mode);
+			void SetDrawingMode(DrawingMode mode);
 
 			/**
 			 * Saves the options to the file.
