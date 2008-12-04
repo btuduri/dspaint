@@ -1,17 +1,21 @@
 #ifndef MODEMANAGER_H
 #define MODEMANAGER_H
 
+#include <vector>
+
 #include "IOperationalMode.h"
-#include "ModeNormal.h"
+#include "PenMode.h"
+#include "EraserMode.h"
+
+//using namespace std:
 
 namespace DSPaint
 {
 	class ModeManager
 	{
 	    private:
-            int numberOfModes;
-            IOperationalMode* currentMode;
-            IOperationalMode* allModes[1];
+            int currentMode;
+            std::vector<IOperationalMode *> modes;
 
 		public:
             /**
@@ -27,7 +31,7 @@ namespace DSPaint
             /**
              * Set the current mode.
              */
-            void SetCurrentMode(IOperationalMode* mode);
+            void SetCurrentMode(int mode);
 
             /**
              * Get the current mode.
@@ -39,10 +43,10 @@ namespace DSPaint
              */
             char* GetCurrentModeName();
 
-            /**
+			/**
              * Get a list of all modes.
              */
-            IOperationalMode** GetModeList();
+            std::vector<IOperationalMode *> GetModes();
 
             /**
              * Get number of modes.

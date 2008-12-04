@@ -21,21 +21,7 @@ int main(int argc, char* argv[])
 
     // Create mode manager
     DSPaint::ModeManager mm;
-    DSPaint::IOperationalMode** modeList;
-    modeList = mm.GetModeList();
     DSPaint::PromptManager::ShowMode(mm.GetCurrentModeName());
-
-	// Display a example prompt
-    DSPaint::PromptManager::ShowMessagePrompt(
-		"Press a button and do something and see if this text wraps round",
-		"I",
-		"am",
-		"a",
-		"very",
-		"long",
-		"word",
-		"!!!"
-	);
 
 	// Create a new canvas
 	DSPaint::Canvas canvas;
@@ -82,12 +68,12 @@ int main(int argc, char* argv[])
 		PA_oldx[ACTIVE_SCREEN] = Stylus.X;
 		PA_oldy[ACTIVE_SCREEN] = Stylus.Y;
 		PA_olddowntime[ACTIVE_SCREEN] = Stylus.Downtime;
+
 		// put pad key presses here for actions
 		if (Pad.Newpress.L || Pad.Released.R)
 		{
 			//TODO: Create a dialog to confirm clear screen
-			canvas.Clear();
-            DSPaint::PromptManager::ShowMode(mm.GetCurrentModeName());
+            DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
 		}
 	}
 

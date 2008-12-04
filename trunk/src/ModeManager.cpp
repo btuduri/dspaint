@@ -7,9 +7,10 @@ namespace DSPaint
 	*/
     ModeManager::ModeManager()
     {
-        this->numberOfModes = 1;
-        this->allModes[0] = new ModeNormal();
-        this->SetCurrentMode(allModes[0]);
+        this->modes.push_back(new PenMode());
+        this->modes.push_back(new EraserMode());
+
+        this->SetCurrentMode(0);
     }
 
    /**
@@ -17,13 +18,13 @@ namespace DSPaint
     */
     ModeManager::~ModeManager()
     {
-        delete this->allModes;
+        this->modes.clear();
     }
 
    /**
     * Set the current mode.
     */
-    void ModeManager::SetCurrentMode(IOperationalMode* mode)
+    void ModeManager::SetCurrentMode(int mode)
     {
         this->currentMode = mode;
     }
@@ -33,7 +34,7 @@ namespace DSPaint
     */
     IOperationalMode* ModeManager::GetCurrentMode()
     {
-        return this->currentMode;
+        return this->modes.at(this->currentMode);
     }
 
    /**
@@ -41,15 +42,15 @@ namespace DSPaint
     */
     char* ModeManager::GetCurrentModeName()
     {
-        return this->currentMode->GetModeName();
+        return this->modes.at(this->currentMode)->GetModeName();
     }
 
-   /**
-    * Get a list of all modes.
-    */
-    IOperationalMode** ModeManager::GetModeList()
+	/**
+     * Get a list of all modes.
+     */
+    std::vector<IOperationalMode *> ModeManager::GetModes()
     {
-        return this->allModes;
+    	return this->modes;
     }
 
     /**
@@ -57,6 +58,6 @@ namespace DSPaint
      */
     int ModeManager::GetNumberOfModes()
     {
-        return this->numberOfModes;
+        return this->modes.size();
     }
 }
