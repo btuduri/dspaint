@@ -2,23 +2,21 @@
 
 namespace DSPaint
 {
+	const char* PromptManager::keys[] = {"A","B","X","Y","L","R"};
+
 	int PromptManager::ShowModePrompt(std::vector<IOperationalMode *> modes)
 	{
-		// change this to palib keys
-		char* keys[] = {"A","B","X","Y","L","R"};
-
 		PA_OutputSimpleText(1, 0, 0, "Choose your mode");
 
-		int i = 0;
+		//int i = 0;
 		int pos = 3;
 
-		for (int i = 0; i < modes.size() && i < 6; i++)
+		for (size_t i = 0; i < modes.size() && i < PromptManager::MAX_OPTIONS; i++)
 		{
         	pos++;
 
         	PA_OutputSimpleText(1, 1, pos, keys[i]);
         	PA_OutputSimpleText(1, 4, pos, modes.at(i)->GetModeName());
-
 
         	pos++;
 		}
@@ -30,20 +28,17 @@ namespace DSPaint
 
 	int PromptManager::ShowMessagePrompt(const char* message, ...)
 	{
-		// change this to palib keys
-		char* keys[] = {"A","B","X","Y","L","R"};
-
 		PA_OutputSimpleText(1, 0, 0, message);
 
 		char* c;
-		int i = 0;
+		size_t i = 0;
 		int pos = 3;
 
 		va_list buttons;
 
 		va_start(buttons, message);
 
-		while ((c = va_arg(buttons, char*)) != NULL && i < 6)
+		while ((c = va_arg(buttons, char*)) != NULL && i < PromptManager::MAX_OPTIONS)
         {
         	pos++;
 
@@ -62,8 +57,8 @@ namespace DSPaint
 		return 0;
 	}
 
-	void PromptManager::ShowMode(const char* modeName)
+	void PromptManager::ShowMode(IOperationalMode* modeName)
 	{
-	    PA_BoxText(1, 0, 22, 31, 23, modeName, 100);
+	    PA_BoxText(1, 0, 22, 31, 23, modeName->GetModeName(), 100);
 	}
 }

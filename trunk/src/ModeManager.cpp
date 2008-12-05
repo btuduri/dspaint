@@ -3,8 +3,8 @@
 namespace DSPaint
 {
     /**
-	* Creates a new instance.
-	*/
+     * Creates a new instance.
+	 */
     ModeManager::ModeManager()
     {
         this->modes.push_back(new PenMode());
@@ -13,36 +13,28 @@ namespace DSPaint
         this->SetCurrentMode(0);
     }
 
-   /**
-    * Destroy the instance.
-    */
+    /**
+     * Destroy the instance.
+     */
     ModeManager::~ModeManager()
     {
         this->modes.clear();
     }
 
-   /**
-    * Set the current mode.
-    */
+    /**
+     * Set the current mode.
+     */
     void ModeManager::SetCurrentMode(int mode)
     {
         this->currentMode = mode;
     }
 
-   /**
-    * Get the current mode.
-    */
+	/**
+     * Get the current mode.
+     */
     IOperationalMode* ModeManager::GetCurrentMode()
     {
         return this->modes.at(this->currentMode);
-    }
-
-   /**
-    * Get the current mode's name.
-    */
-    char* ModeManager::GetCurrentModeName()
-    {
-        return this->modes.at(this->currentMode)->GetModeName();
     }
 
 	/**

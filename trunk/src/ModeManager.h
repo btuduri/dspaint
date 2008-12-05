@@ -23,9 +23,9 @@ namespace DSPaint
 			 */
             ModeManager();
 
-            /**
-             * Destroy the instance.
-             */
+             /**
+              * Destroy the instance.
+              */
             ~ModeManager();
 
             /**
@@ -37,11 +37,6 @@ namespace DSPaint
              * Get the current mode.
              */
             IOperationalMode* GetCurrentMode();
-
-            /**
-             * Get the current mode's name.
-             */
-            char* GetCurrentModeName();
 
 			/**
              * Get a list of all modes.
