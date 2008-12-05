@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 
     // Create mode manager
     DSPaint::ModeManager mm;
-    DSPaint::PromptManager::ShowMode(mm.GetCurrentModeName());
+    DSPaint::PromptManager::ShowMode(mm.GetCurrentMode());
 
 	// Create a new canvas
 	DSPaint::Canvas canvas;
