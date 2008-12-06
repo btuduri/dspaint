@@ -41,6 +41,6 @@ namespace DSPaint
 
 	void Pen::DrawLine(Canvas canvas, s16 x1, s16 y1, s16 x2, s16 y2)
 	{
-		PA_Draw16bitLineEx(ACTIVE_SCREEN, x1, y1, x2, y2, _colour, _width);
+		PA_Draw16bitLineEx(BOTTOM_SCREEN, x1, y1, x2, y2, _colour, _width);
 	}
 }

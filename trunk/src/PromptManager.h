@@ -29,13 +29,13 @@ namespace DSPaint
 			 * @... A list of char* of the options to display.
 			 * @return The option selected pressed.
 			 */
-			static int ShowMessagePrompt(const char* message, ...);
+			static int ShowMessagePrompt(const char* message, size_t count, ...);
 
 			/**
 			 * Shows a mode.
-			 * @
+			 * @mode The mode to use.
 			 */
-			static void ShowMode(IOperationalMode* modeName);
+			static void ShowMode(IOperationalMode* mode);
 	};
 }
 

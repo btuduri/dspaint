@@ -3,8 +3,8 @@
 #define NDS_SCREEN_MAX_HEIGHT  192
 
 // hardware representation
-#define ACTIVE_SCREEN          0
-#define SUB_SCREEN             1
+#define BOTTOM_SCREEN          0
+#define TOP_SCREEN             1
 
 // some about information
 #define DSP_ABOUT_COPYRIGHT    "Copyright 2008 Kwok-wai Kan, Peter Vousden"

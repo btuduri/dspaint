@@ -33,13 +33,13 @@ namespace DSPaint
 
     void Canvas::SetPixel(s16 x, s16 y, u16 colour)
     {
-        PA_Put16bitPixel(ACTIVE_SCREEN, x, y, colour);
+        PA_Put16bitPixel(BOTTOM_SCREEN, x, y, colour);
     }
 
     void Canvas::Clear()
     {
         // reinitialise graphics
-        PA_Init16bitBg(ACTIVE_SCREEN, 3);
+        PA_Init16bitBg(BOTTOM_SCREEN, 3);
 
 		// set each individual pixel to the background colour
 		// (this is an extremely slow way to draw)
@@ -47,7 +47,7 @@ namespace DSPaint
 		{
 		    for (int j = 0; j < NDS_SCREEN_MAX_HEIGHT; j++)
 		    {
-                PA_Put16bitPixel(ACTIVE_SCREEN, i, j, backgroundColour);
+                PA_Put16bitPixel(BOTTOM_SCREEN, i, j, backgroundColour);
 		    }
 		}
     }
