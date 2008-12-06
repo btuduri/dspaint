@@ -2,35 +2,99 @@
 
 namespace DSPaint
 {
-	const char* PromptManager::keys[] = {"A","B","X","Y","L","R"};
+	const char* PromptManager::keys[] = {"A","B","X","Y","St","Sl"};
 
 	int PromptManager::ShowModePrompt(std::vector<IOperationalMode *> modes)
 	{
 		PA_OutputSimpleText(1, 0, 0, "Choose your mode");
 
-		//int i = 0;
 		int pos = 3;
 
-		for (size_t i = 0; i < modes.size() && i < PromptManager::MAX_OPTIONS; i++)
+		for (size_t i = 0; i < modes.size(); i++)
 		{
-        	pos++;
+        	if (i < PromptManager::MAX_OPTIONS)
+        	{
+				pos++;
 
-        	PA_OutputSimpleText(1, 1, pos, keys[i]);
-        	PA_OutputSimpleText(1, 4, pos, modes.at(i)->GetModeName());
+				PA_OutputSimpleText(1, 1, pos, keys[i]);
+				PA_OutputSimpleText(1, 4, pos, modes.at(i)->GetModeName());
 
-        	pos++;
+				pos++;
+        	}
+        	else
+        	{
+        		break;
+        	}
 		}
 
 		//TODO: Use PA_Wait to get keys
+		bool running = true;
 
-		return 0;
+		// 0 means nothing selected
+		int ret = 0;
+
+		do {
+			PA_WaitForVBL();
+
+			// close the menu
+			if (Pad.Released.L || Pad.Released.R)
+			{
+				running = false;
+			}
+			else if (Pad.Released.A)
+			{
+				ret = 1;
+				running = false;
+			}
+			else if (Pad.Released.B)
+			{
+				ret = 2;
+				running = false;
+			}
+			else if (Pad.Released.X)
+			{
+				ret = 3;
+				running = false;
+			}
+			else if (Pad.Released.Y)
+			{
+				ret = 4;
+				running = false;
+			}
+			else if (Pad.Released.Start)
+			{
+				ret = 5;
+				running = false;
+			}
+			else if (Pad.Released.Select)
+			{
+				ret = 6;
+				running = false;
+			}
+//			else if (Pad.Released.Up)
+//			{
+//			}
+//			else if (Pad.Released.Down)
+//			{
+//			}
+//			else if (Pad.Released.Left)
+//			{
+//			}
+//			else if (Pad.Released.Right)
+//			{
+//			}
+		} while (running);
+
+		PA_ClearTextBg(TOP_SCREEN);
+
+		return ret;
 	}
 
-	int PromptManager::ShowMessagePrompt(const char* message, ...)
+	int PromptManager::ShowMessagePrompt(const char* message, size_t count, ...)
 	{
 		PA_OutputSimpleText(1, 0, 0, message);
 
-		char* c;
+		const char* c;
 		size_t i = 0;
 		int pos = 3;
 
@@ -38,27 +102,92 @@ namespace DSPaint
 
 		va_start(buttons, message);
 
-		while ((c = va_arg(buttons, char*)) != NULL && i < PromptManager::MAX_OPTIONS)
+		for (i; i < count; i++)
+		//while (((c = va_arg(buttons, const char*)) != NULL))// && c[0] >= 0x32 && c[0] <= 0x7E)
         {
-        	pos++;
+        	if (i < PromptManager::MAX_OPTIONS)
+        	{
+				pos++;
 
-        	PA_OutputSimpleText(1, 1, pos, keys[i]);
-        	PA_OutputSimpleText(1, 4, pos, c);
+				PA_OutputSimpleText(1, 1, pos, keys[i]);
+				PA_OutputSimpleText(1, 4, pos, va_arg(buttons, const char*));
 
-
-        	pos++;
-        	i++;
+				pos++;
+				//i++;
+        	}
+        	else
+        	{
+        		break;
+        	}
         }
 
 		va_end(buttons);
 
 		//TODO: Use PA_Wait to get keys
+		bool running = true;
 
-		return 0;
+		// 0 means nothing selected
+		int ret = 0;
+
+		do {
+			PA_WaitForVBL();
+
+			// close the menu
+			if (Pad.Released.L || Pad.Released.R)
+			{
+				running = false;
+			}
+			else if (Pad.Released.A)
+			{
+				ret = 1;
+				running = false;
+			}
+			else if (Pad.Released.B)
+			{
+				ret = 2;
+				running = false;
+			}
+			else if (Pad.Released.X)
+			{
+				ret = 3;
+				running = false;
+			}
+			else if (Pad.Released.Y)
+			{
+				ret = 4;
+				running = false;
+			}
+			else if (Pad.Released.Start)
+			{
+				ret = 5;
+				running = false;
+			}
+			else if (Pad.Released.Select)
+			{
+				ret = 6;
+				running = false;
+			}
+//			else if (Pad.Released.Up)
+//			{
+//			}
+//			else if (Pad.Released.Down)
+//			{
+//			}
+//			else if (Pad.Released.Left)
+//			{
+//			}
+//			else if (Pad.Released.Right)
+//			{
+//			}
+		} while (running);
+
+		PA_ClearTextBg(TOP_SCREEN);
+
+		return ret;
 	}
 
-	void PromptManager::ShowMode(IOperationalMode* modeName)
+	void PromptManager::ShowMode(IOperationalMode* mode)
 	{
-	    PA_BoxText(1, 0, 22, 31, 23, modeName->GetModeName(), 100);
+	    PA_BoxText(1, 0, 22, 31, 23, mode->GetModeName(), 100);
 	}
 }

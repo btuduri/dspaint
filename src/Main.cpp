@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
     PA_InitVBL();
 
     // Init the console
-    PA_InitText(SUB_SCREEN, 0);
+    PA_InitText(TOP_SCREEN, 0);
     PA_SetTextCol(1, 31, 31, 31);
 
     // Create mode manager
@@ -38,8 +38,8 @@ int main(int argc, char* argv[])
 		// check if stylus is pressed or held
 		if (Stylus.Newpress)
 		{
-			s16 low = (PA_drawsize[ACTIVE_SCREEN] >> 1) - PA_drawsize[ACTIVE_SCREEN] + 1;
-			s16 high = (PA_drawsize[ACTIVE_SCREEN] >> 1) + 1;
+			s16 low = (PA_drawsize[BOTTOM_SCREEN] >> 1) - PA_drawsize[BOTTOM_SCREEN] + 1;
+			s16 high = (PA_drawsize[BOTTOM_SCREEN] >> 1) + 1;
 			s16 i = 0, j = 0;
 
 			for (i = low; i < high; i++)
@@ -56,24 +56,37 @@ int main(int argc, char* argv[])
 		}
 		else if (Stylus.Held)
 		{
-			if(PA_olddowntime[ACTIVE_SCREEN] != (Stylus.Downtime - 1))
+			if(PA_olddowntime[BOTTOM_SCREEN] != (Stylus.Downtime - 1))
 			{
-				PA_oldx[ACTIVE_SCREEN] = Stylus.X;
-				PA_oldy[ACTIVE_SCREEN] = Stylus.Y;
+				PA_oldx[BOTTOM_SCREEN] = Stylus.X;
+				PA_oldy[BOTTOM_SCREEN] = Stylus.Y;
 			}
 
-			pen.DrawLine(canvas, Stylus.X, Stylus.Y, PA_oldx[ACTIVE_SCREEN], PA_oldy[ACTIVE_SCREEN]);
+			pen.DrawLine(canvas, Stylus.X, Stylus.Y, PA_oldx[BOTTOM_SCREEN], PA_oldy[BOTTOM_SCREEN]);
 		}
 
-		PA_oldx[ACTIVE_SCREEN] = Stylus.X;
-		PA_oldy[ACTIVE_SCREEN] = Stylus.Y;
-		PA_olddowntime[ACTIVE_SCREEN] = Stylus.Downtime;
+		PA_oldx[BOTTOM_SCREEN] = Stylus.X;
+		PA_oldy[BOTTOM_SCREEN] = Stylus.Y;
+		PA_olddowntime[BOTTOM_SCREEN] = Stylus.Downtime;
 
 		// put pad key presses here for actions
-		if (Pad.Newpress.L || Pad.Released.R)
+		if (Pad.Released.L || Pad.Released.R)
 		{
-			//TODO: Create a dialog to confirm clear screen
-            DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
+			int res = DSPaint::PromptManager::ShowMessagePrompt("Choose an option", 2, "New image", "Change mode");
+
+            if (res == 1)
+            {
+            	res = DSPaint::PromptManager::ShowMessagePrompt("Are you sure you want to clear the image?", 2, "Yes", "No");
+
+            	if (res == 1)
+            	{
+            		canvas.Clear();
+            	}
+            }
+            else if (res == 2)
+            {
+            	res = DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
+            }
 		}
 	}
 
