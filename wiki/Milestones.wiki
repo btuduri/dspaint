@@ -30,3 +30,9 @@ When committing a change that meets the milestone, prefix the message with 'Mile
   * ~~Clear the screen using a button and a confirmation prompt~~
   * Change pen width
   * ~~Create a draw line method in the IPen interface~~
+
+== 0.4 ==
+
+  * Refactor prompt actions into separate IOperationalMode
+  * Create modes for each IOperationalMode
+  * Make some of the IOperationalMode buttons do something
