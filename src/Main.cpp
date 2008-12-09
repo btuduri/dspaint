@@ -72,7 +72,8 @@ int main(int argc, char* argv[])
 		// put pad key presses here for actions
 		if (Pad.Released.L || Pad.Released.R)
 		{
-			int res = DSPaint::PromptManager::ShowMessagePrompt("Choose an option", 2, "New image", "Change mode");
+			//TODO: This entire piece of code is crap and needs to be refactored
+			int res = DSPaint::PromptManager::ShowMessagePrompt("Choose an option", 3, "New image", "Change mode", "Change width");
 
             if (res == 1)
             {
@@ -86,6 +87,22 @@ int main(int argc, char* argv[])
             else if (res == 2)
             {
             	res = DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
+            }
+            else if (res == 3)
+            {
+            	do {
+					res = DSPaint::PromptManager::ShowMessagePrompt("Change width", 3, "+", "-", "Close");
+
+					if (res == 1)
+					{
+						pen.SetWidth(pen.GetWidth() + 1);
+					}
+					else if (res == 2)
+					{
+						pen.SetWidth(pen.GetWidth() - 1);
+					}
+            	} while (res == 1 || res == 2);
+            	// while setting the width
             }
 		}
 	}
