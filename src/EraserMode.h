@@ -16,7 +16,7 @@ namespace DSPaint
             /**
              * Destroy the instance.
              */
-            ~EraserMode();
+            virtual ~EraserMode();
 
             /**
 			 * Return the name of the mode.
