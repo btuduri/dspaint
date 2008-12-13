@@ -94,16 +94,15 @@ namespace DSPaint
 	{
 		PA_OutputSimpleText(1, 0, 0, message);
 
-		const char* c;
-		size_t i = 0;
+		//const char* c;
+		size_t i;
 		int pos = 3;
 
 		va_list buttons;
 
-		va_start(buttons, message);
+		va_start(buttons, count);
 
-		for (i; i < count; i++)
-		//while (((c = va_arg(buttons, const char*)) != NULL))// && c[0] >= 0x32 && c[0] <= 0x7E)
+		for (i = 0; i < count; i++)
         {
         	if (i < PromptManager::MAX_OPTIONS)
         	{
@@ -113,7 +112,6 @@ namespace DSPaint
 				PA_OutputSimpleText(1, 4, pos, va_arg(buttons, const char*));
 
 				pos++;
-				//i++;
         	}
         	else
         	{
