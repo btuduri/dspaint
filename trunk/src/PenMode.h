@@ -16,7 +16,7 @@ namespace DSPaint
             /**
              * Destroy the instance.
              */
-            ~PenMode();
+            virtual ~PenMode();
 
             /**
 			 * Return the name of the mode.
