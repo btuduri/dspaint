@@ -69,41 +69,75 @@ int main(int argc, char* argv[])
 		PA_oldy[BOTTOM_SCREEN] = Stylus.Y;
 		PA_olddowntime[BOTTOM_SCREEN] = Stylus.Downtime;
 
-		// put pad key presses here for actions
-		if (Pad.Released.L || Pad.Released.R)
+		// new method for each button press
+		// the IOperationalMode should handle the rest of the button presses
+		if (Pad.Released.A)
 		{
-			//TODO: This entire piece of code is crap and needs to be refactored
-			int res = DSPaint::PromptManager::ShowMessagePrompt("Choose an option", 3, "New image", "Change mode", "Change width");
+			mm.GetCurrentMode()->A();
+		}
+		else if (Pad.Released.B)
+		{
+			mm.GetCurrentMode()->B();
+		}
+		else if (Pad.Released.X)
+		{
+			mm.GetCurrentMode()->X();
+		}
+		else if (Pad.Released.Y)
+		{
+			mm.GetCurrentMode()->Y();
+		}
+		else if (Pad.Released.Up)
+		{
+			mm.GetCurrentMode()->Up();
+		}
+		else if (Pad.Released.Down)
+		{
+			mm.GetCurrentMode()->Down();
+		}
+		else if (Pad.Released.Left)
+		{
+			mm.GetCurrentMode()->Left();
+		}
+		else if (Pad.Released.Right)
+		{
+			mm.GetCurrentMode()->Right();
+		}
+		else if (Pad.Released.Start)
+		{
+			mm.GetCurrentMode()->Start();
+		}
+		else if (Pad.Released.Select)
+		{
+			mm.GetCurrentMode()->Select();
+		}
+		else if (Pad.Released.L || Pad.Released.R)
+		{
+			int res = DSPaint::PromptManager::ShowMessagePrompt(
+				"Choose an option",
+				2,
+				"New image",
+				"Change mode"
+			);
 
-            if (res == 1)
-            {
-            	res = DSPaint::PromptManager::ShowMessagePrompt("Are you sure you want to clear the image?", 2, "Yes", "No");
+			if (res == 1)
+			{
+				res = DSPaint::PromptManager::ShowMessagePrompt(
+					"Are you sure you want to clear the image?",
+					2,
+					"Yes",
+					"No"
+				);
 
             	if (res == 1)
             	{
             		canvas.Clear();
             	}
-            }
-            else if (res == 2)
-            {
-            	res = DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
-            }
-            else if (res == 3)
-            {
-            	do {
-					res = DSPaint::PromptManager::ShowMessagePrompt("Change width", 3, "+", "-", "Close");
-
-					if (res == 1)
-					{
-						pen.SetWidth(pen.GetWidth() + 1);
-					}
-					else if (res == 2)
-					{
-						pen.SetWidth(pen.GetWidth() - 1);
-					}
-            	} while (res == 1 || res == 2);
-            	// while setting the width
-            }
+			}
+			else if (res == 2)
+			{
+				res = DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
+			}
 		}
 	}
 
