@@ -63,7 +63,7 @@ namespace DSPaint
 	*/
 	void PenMode::Up()
     {
-
+		// pen larger
     }
 
 	/**
@@ -71,7 +71,7 @@ namespace DSPaint
 	*/
 	void PenMode::Down()
     {
-
+		// pen smaller
     }
 
 	/**
@@ -79,7 +79,7 @@ namespace DSPaint
 	*/
 	void PenMode::Left()
     {
-
+		// pen smaller
     }
 
 	/**
@@ -87,7 +87,7 @@ namespace DSPaint
 	*/
 	void PenMode::Right()
     {
-
+		// pen larger
     }
 
 	/**

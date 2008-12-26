@@ -63,6 +63,7 @@ namespace DSPaint
 
 			/**
 			 * Method to execute on select press.
+			 * This should ideally be a help screen.
 			 */
 			virtual void Select() = 0;
 	};

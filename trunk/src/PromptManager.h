@@ -27,7 +27,7 @@ namespace DSPaint
 			 * Shows a message prompt.
 			 * @message The message to show.
 			 * @... A list of char* of the options to display.
-			 * @return The option selected pressed.
+			 * @return The option selected pressed. 0 means cancelled otherwise an index starting from 1.
 			 */
 			static int ShowMessagePrompt(const char* message, size_t count, ...);
 
