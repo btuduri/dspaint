@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 	DSPaint::Canvas canvas;
 
 	// Create a new pen
-	DSPaint::Pen pen;
+	DSPaint::IPen *pen = new DSPaint::Pen();
 
 	// Loop for processing commands
 	while (true)
@@ -50,7 +50,7 @@ int main(int argc, char* argv[])
 					s16 yj = Stylus.Y + j;
 
 					if ((xi >= 0) && (yj >= 0) && (xi < NDS_SCREEN_MAX_WIDTH) && (yj < NDS_SCREEN_MAX_HEIGHT))
-						pen.Draw(canvas, Stylus.X, Stylus.Y);
+						pen->Draw(canvas, Stylus.X, Stylus.Y);
 				}
 			}
 		}
@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
 				PA_oldy[BOTTOM_SCREEN] = Stylus.Y;
 			}
 
-			pen.DrawLine(canvas, Stylus.X, Stylus.Y, PA_oldx[BOTTOM_SCREEN], PA_oldy[BOTTOM_SCREEN]);
+			pen->DrawLine(canvas, Stylus.X, Stylus.Y, PA_oldx[BOTTOM_SCREEN], PA_oldy[BOTTOM_SCREEN]);
 		}
 
 		PA_oldx[BOTTOM_SCREEN] = Stylus.X;
