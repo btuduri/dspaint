@@ -2,6 +2,7 @@
 #define PENMODE_H
 
 #include "IOperationalMode.h"
+#include "Options.h"
 
 namespace DSPaint
 {
@@ -17,6 +18,12 @@ namespace DSPaint
              * Destroy the instance.
              */
             virtual ~PenMode();
+
+			/**
+			 * Sets the options for the mode.
+			 * @options The options to use. Passing in NULL will do nothing.
+			 */
+            virtual void SetOptions(DSPaint::Options* options);
 
             /**
 			 * Return the name of the mode.

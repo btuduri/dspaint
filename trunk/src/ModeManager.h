@@ -7,8 +7,6 @@
 #include "PenMode.h"
 #include "EraserMode.h"
 
-//using namespace std:
-
 namespace DSPaint
 {
 	class ModeManager

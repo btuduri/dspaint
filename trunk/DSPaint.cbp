@@ -38,7 +38,6 @@
 		<Unit filename="src\Canvas.h" />
 		<Unit filename="src\Constants.h" />
 		<Unit filename="src\Dimension.h" />
-		<Unit filename="src\DrawingMode.h" />
 		<Unit filename="src\EraserMode.cpp" />
 		<Unit filename="src\EraserMode.h" />
 		<Unit filename="src\IOperationalMode.h" />
@@ -46,6 +45,7 @@
 		<Unit filename="src\Main.cpp" />
 		<Unit filename="src\ModeManager.cpp" />
 		<Unit filename="src\ModeManager.h" />
+		<Unit filename="src\Options.cpp" />
 		<Unit filename="src\Options.h" />
 		<Unit filename="src\Pen.cpp" />
 		<Unit filename="src\Pen.h" />

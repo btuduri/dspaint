@@ -3,6 +3,7 @@
 #include "Canvas.h"
 #include "ModeManager.h"
 #include "IOperationalMode.h"
+#include "Options.h"
 #include "Pen.h"
 #include "PromptManager.h"
 
@@ -28,6 +29,10 @@ int main(int argc, char* argv[])
 
 	// Create a new pen
 	DSPaint::IPen *pen = new DSPaint::Pen();
+
+	// Create a new options and store stuff so that the modes can use it
+	DSPaint::Options options;
+	options.SetPen(pen);
 
 	// Loop for processing commands
 	while (true)
