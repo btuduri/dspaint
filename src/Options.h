@@ -1,4 +1,7 @@
-#include "DrawingMode.h"
+#ifndef OPTIONS_H
+#define OPTIONS_H
+
+#include "IPen.h"
 
 namespace DSPaint
 {
@@ -9,6 +12,7 @@ namespace DSPaint
 	{
 		private:
 			char* optionsFile;
+			IPen* pen;
 
 		public:
 			/**
@@ -18,19 +22,21 @@ namespace DSPaint
 			Options(char* file = "options.ini");
 
 			/**
-			 * Gets the current mode.
-			 */
-			DrawingMode GetDrawingMode();
-
-			/**
-			 * Sets the current mode.
-			 * @mode The mode to use.
-			 */
-			void SetDrawingMode(DrawingMode mode);
-
-			/**
 			 * Saves the options to the file.
 			 */
 			void Save();
+
+			/**
+			 * Gets the current pen.
+			 */
+			IPen* GetPen();
+
+			/**
+			 * Changes the current pen.
+			 * @pen The new pen to use. Passing in NULL will not change it.
+			 */
+			void SetPen(IPen *pen);
 	};
 }
+
+#endif

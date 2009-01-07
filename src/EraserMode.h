@@ -2,6 +2,7 @@
 #define ERASERMODE_H
 
 #include "IOperationalMode.h"
+#include "Options.h"
 
 namespace DSPaint
 {
@@ -17,6 +18,11 @@ namespace DSPaint
              * Destroy the instance.
              */
             virtual ~EraserMode();
+
+			/**
+			 * Sets the options for the mode.
+			 */
+            virtual void SetOptions(Options* options);
 
             /**
 			 * Return the name of the mode.

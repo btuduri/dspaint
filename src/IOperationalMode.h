@@ -2,6 +2,7 @@
 #define IOPERATIONALMODE_H
 
 #include "Canvas.h"
+#include "Options.h"
 
 namespace DSPaint
 {
@@ -9,12 +10,18 @@ namespace DSPaint
 	{
 	    protected:
 			char* modeName;
+			Options* options;
 
 		public:
             /**
 			 * Return the name of the mode.
 			 */
 			virtual char* GetModeName() = 0;
+
+			/**
+			 * Sets the options for the mode.
+			 */
+			virtual void SetOptions(Options* options) = 0;
 
 			/**
 			 * Method to execute on A press.
