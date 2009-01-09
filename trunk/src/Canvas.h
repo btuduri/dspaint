@@ -49,9 +49,19 @@ namespace DSPaint
 			 * Sets a pixel to a colour.
 			 * @x The x position.
 			 * @y The y position.
-			 * @pen The pen to use.
+			 * @colour The colour to use.
 			 */
-			void SetPixel(s16 x, s16 y, u16 colour);
+			void DrawPoint(s16 x, s16 y, u16 colour);
+
+
+			/**
+			 * Sets a line of pixels to a colour.
+			 * @x1 The start x of the line.
+			 * @y1 The start y of the line.
+             * @x2 The end x of the line.
+			 * @y2 The end y of the line.
+			 */
+            void DrawLine(s16 x1, s16 y1, s16 x2, s16 y2, u16 colour, s8 width);
 
 			/**
 			 * Sets the canvas to the background.

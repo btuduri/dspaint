@@ -31,9 +31,14 @@ namespace DSPaint
     	return PA_Get16bitPixel(0, x, y);
     }
 
-    void Canvas::SetPixel(s16 x, s16 y, u16 colour)
+    void Canvas::DrawPoint(s16 x, s16 y, u16 colour)
     {
         PA_Put16bitPixel(BOTTOM_SCREEN, x, y, colour);
+    }
+
+    void Canvas::DrawLine(s16 x1, s16 y1, s16 x2, s16 y2, u16 colour, s8 width)
+    {
+        PA_Draw16bitLineEx(BOTTOM_SCREEN, x1, y1, x2, y2, colour, width);
     }
 
     void Canvas::Clear()
