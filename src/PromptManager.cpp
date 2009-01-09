@@ -2,29 +2,22 @@
 
 namespace DSPaint
 {
-	const char* PromptManager::keys[] = {"A","B","X","Y","St","Sl"};
+	const char *PromptManager::keys[] = {"A","B","X","Y","St","Sl"};
 
 	int PromptManager::ShowModePrompt(std::vector<IOperationalMode *> modes)
 	{
+		int pos = 4;
+		size_t i = 0;
+
 		PA_OutputSimpleText(1, 0, 0, "Choose your mode");
 
-		int pos = 3;
-
-		for (size_t i = 0; i < modes.size(); i++)
+		while ((i < modes.size()) && (i < PromptManager::MAX_OPTIONS))
 		{
-        	if (i < PromptManager::MAX_OPTIONS)
-        	{
-				pos++;
+			PA_OutputSimpleText(1, 1, pos, keys[i]);
+			PA_OutputSimpleText(1, 4, pos, modes.at(i)->GetModeName());
 
-				PA_OutputSimpleText(1, 1, pos, keys[i]);
-				PA_OutputSimpleText(1, 4, pos, modes.at(i)->GetModeName());
-
-				pos++;
-        	}
-        	else
-        	{
-        		break;
-        	}
+			pos+=2; // Two new lines for spacing.
+			i++;
 		}
 
 		//TODO: Use PA_Wait to get keys
@@ -90,34 +83,24 @@ namespace DSPaint
 		return ret;
 	}
 
-	int PromptManager::ShowMessagePrompt(const char* message, size_t count, ...)
+	int PromptManager::ShowMessagePrompt(const char *message, size_t count, ...)
 	{
+		size_t i = 0;
+		int pos = 4;
+
 		PA_OutputSimpleText(1, 0, 0, message);
 
-		//const char* c;
-		size_t i;
-		int pos = 3;
-
 		va_list buttons;
-
 		va_start(buttons, count);
 
-		for (i = 0; i < count; i++)
-        {
-        	if (i < PromptManager::MAX_OPTIONS)
-        	{
-				pos++;
+		while ((i < count) && (i < PromptManager::MAX_OPTIONS))
+		{
+			PA_OutputSimpleText(1, 1, pos, keys[i]);
+			PA_OutputSimpleText(1, 4, pos, va_arg(buttons, const char *));
 
-				PA_OutputSimpleText(1, 1, pos, keys[i]);
-				PA_OutputSimpleText(1, 4, pos, va_arg(buttons, const char*));
-
-				pos++;
-        	}
-        	else
-        	{
-        		break;
-        	}
-        }
+			pos+=2; // Two new lines for spacing.
+			i++;
+		}
 
 		va_end(buttons);
 
@@ -184,7 +167,7 @@ namespace DSPaint
 		return ret;
 	}
 
-	void PromptManager::ShowMode(IOperationalMode* mode)
+	void PromptManager::ShowMode(IOperationalMode *mode)
 	{
 	    PA_BoxText(1, 0, 22, 31, 23, mode->GetModeName(), 100);
 	}

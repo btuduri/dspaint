@@ -32,7 +32,7 @@ namespace DSPaint
 	/**
      * Get the current mode.
      */
-    IOperationalMode* ModeManager::GetCurrentMode()
+    IOperationalMode *ModeManager::GetCurrentMode()
     {
         return this->modes.at(this->currentMode);
     }

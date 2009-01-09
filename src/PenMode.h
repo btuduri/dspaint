@@ -23,7 +23,7 @@ namespace DSPaint
 			 * Sets the options for the mode.
 			 * @options The options to use. Passing in NULL will do nothing.
 			 */
-            virtual void SetOptions(DSPaint::Options* options);
+            virtual void SetOptions(DSPaint::Options *options);
 
             /**
 			 * Return the name of the mode.
