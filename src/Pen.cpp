@@ -34,13 +34,13 @@ namespace DSPaint
 		this->_colour = colour;
 	}
 
-	void Pen::Draw(Canvas canvas, s16 x, s16 y)
+	void Pen::Draw(Canvas canvas, s16 x, s16 y) //Draw point
 	{
-		canvas.SetPixel(x, y, this->_colour);
+		canvas.DrawPoint(x, y, this->_colour);
 	}
 
-	void Pen::DrawLine(Canvas canvas, s16 x1, s16 y1, s16 x2, s16 y2)
+	void Pen::Draw(Canvas canvas, s16 x1, s16 y1, s16 x2, s16 y2) //Draw line
 	{
-		PA_Draw16bitLineEx(BOTTOM_SCREEN, x1, y1, x2, y2, _colour, _width);
+        canvas.DrawLine(x1, y1, x2, y2, this->_colour, this->_width);
 	}
 }

@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
 				PA_oldy[BOTTOM_SCREEN] = Stylus.Y;
 			}
 
-			pen->DrawLine(canvas, Stylus.X, Stylus.Y, PA_oldx[BOTTOM_SCREEN], PA_oldy[BOTTOM_SCREEN]);
+			pen->Draw(canvas, Stylus.X, Stylus.Y, PA_oldx[BOTTOM_SCREEN], PA_oldy[BOTTOM_SCREEN]);
 		}
 
 		PA_oldx[BOTTOM_SCREEN] = Stylus.X;

@@ -57,7 +57,7 @@ namespace DSPaint
 			 * @x2 Second X point.
 			 * @y2 Second Y point.
 			 */
-			virtual void DrawLine(Canvas canvas, s16 x1, s16 y1, s16 x2, s16 y2);
+			virtual void Draw(Canvas canvas, s16 x1, s16 y1, s16 x2, s16 y2);
 	};
 }
 
