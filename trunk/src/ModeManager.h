@@ -34,7 +34,7 @@ namespace DSPaint
             /**
              * Get the current mode.
              */
-            IOperationalMode* GetCurrentMode();
+            IOperationalMode *GetCurrentMode();
 
 			/**
              * Get a list of all modes.

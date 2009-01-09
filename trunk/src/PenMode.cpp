@@ -18,10 +18,12 @@ namespace DSPaint
 
     }
 
-    void PenMode::SetOptions(DSPaint::Options* options)
+    void PenMode::SetOptions(DSPaint::Options *options)
     {
     	if (options != NULL)
+    	{
 			this->options = options;
+    	}
     }
 
     /**

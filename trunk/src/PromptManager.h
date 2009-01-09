@@ -13,7 +13,7 @@ namespace DSPaint
 	class PromptManager
 	{
 		private:
-			static const char* keys[];
+			static const char *keys[];
 			static const size_t MAX_OPTIONS = 6;
 		public:
 			/**
@@ -29,13 +29,13 @@ namespace DSPaint
 			 * @... A list of char* of the options to display.
 			 * @return The option selected pressed. 0 means cancelled otherwise an index starting from 1.
 			 */
-			static int ShowMessagePrompt(const char* message, size_t count, ...);
+			static int ShowMessagePrompt(const char *message, size_t count, ...);
 
 			/**
 			 * Shows a mode.
 			 * @mode The mode to use.
 			 */
-			static void ShowMode(IOperationalMode* mode);
+			static void ShowMode(IOperationalMode * mode);
 	};
 }
 

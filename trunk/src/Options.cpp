@@ -2,7 +2,7 @@
 
 namespace DSPaint
 {
-	Options::Options(char* file)
+	Options::Options(char *file)
 	{
 		// currently does nothing
 	}

@@ -19,7 +19,7 @@ namespace DSPaint
 			 * Creates a new options class.
 			 * @file The options file to load from.
 			 */
-			Options(char* file = "options.ini");
+			Options(char *file = "options.ini");
 
 			/**
 			 * Saves the options to the file.
@@ -29,7 +29,7 @@ namespace DSPaint
 			/**
 			 * Gets the current pen.
 			 */
-			IPen* GetPen();
+			IPen *GetPen();
 
 			/**
 			 * Changes the current pen.

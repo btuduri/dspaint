@@ -9,19 +9,19 @@ namespace DSPaint
 	class IOperationalMode
 	{
 	    protected:
-			char* modeName;
-			Options* options;
+			char *modeName;
+			Options *options;
 
 		public:
             /**
 			 * Return the name of the mode.
 			 */
-			virtual char* GetModeName() = 0;
+			virtual char *GetModeName() = 0;
 
 			/**
 			 * Sets the options for the mode.
 			 */
-			virtual void SetOptions(Options* options) = 0;
+			virtual void SetOptions(Options *options) = 0;
 
 			/**
 			 * Method to execute on A press.
