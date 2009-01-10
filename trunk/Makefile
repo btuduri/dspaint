@@ -60,21 +60,21 @@ EXPORT_DIR := /c/ndsexamples/
 ifeq ($(strip $(ARM7_SELECTED)), ARM7_BASIC)
 	ARM7BIN		:= -7 $(PAPATH)/lib/arm7/arm7.bin
 endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MOD_DSWIFI)
-	ARM7BIN		:= -7 $(PAPATH)/lib/arm7_mod_dswifi/arm7.bin
-endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MOD_LIBLOBBY)
-	ARM7BIN		:= -7 $(PAPATH)/lib/arm7_mod_liblobby/arm7.bin
-endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MP3_DSWIFI)
-	ARM7BIN		:= -7 $(PAPATH)/lib/arm7_mp3_dswifi/arm7.bin
-endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MP3_LIBLOBBY)
-	ARM7BIN		:= -7 $(PAPATH)/lib/arm7_mp3_liblobby/arm7.bin
-endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MIKMOD_DSWIFI)
-	ARM7BIN		:= -7 $(PAPATH)/lib/arm7_mikmod_dswifi/arm7.bin
-endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MOD_DSWIFI)
+	# ARM7BIN		:= -7 $(PAPATH)/lib/arm7_mod_dswifi/arm7.bin
+# endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MOD_LIBLOBBY)
+	# ARM7BIN		:= -7 $(PAPATH)/lib/arm7_mod_liblobby/arm7.bin
+# endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MP3_DSWIFI)
+	# ARM7BIN		:= -7 $(PAPATH)/lib/arm7_mp3_dswifi/arm7.bin
+# endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MP3_LIBLOBBY)
+	# ARM7BIN		:= -7 $(PAPATH)/lib/arm7_mp3_liblobby/arm7.bin
+# endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MIKMOD_DSWIFI)
+	# ARM7BIN		:= -7 $(PAPATH)/lib/arm7_mikmod_dswifi/arm7.bin
+# endif
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -115,21 +115,21 @@ PREFIX			:=	arm-eabi-
 ifeq ($(strip $(ARM7_SELECTED)), ARM7_BASIC)
 	LIBS	:= -lfat -lnds9 -ldswifi9
 endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MOD_DSWIFI)
-	LIBS	:= -lfat -lnds9 -ldswifi9
-endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MOD_LIBLOBBY)
-	LIBS	:= -lfat -lnds9 -llobby9d
-endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MP3_DSWIFI)
-	LIBS	:= -lfat -lnds9 -ldswifi9
-endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MP3_LIBLOBBY)
-	LIBS	:= -lfat -lnds9 -llobby9d
-endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MIKMOD_DSWIFI)
-	LIBS	:= -lfat -lnds9 -ldswifi9 -lmikmod9
-endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MOD_DSWIFI)
+	# LIBS	:= -lfat -lnds9 -ldswifi9
+# endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MOD_LIBLOBBY)
+	# LIBS	:= -lfat -lnds9 -llobby9d
+# endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MP3_DSWIFI)
+	# LIBS	:= -lfat -lnds9 -ldswifi9
+# endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MP3_LIBLOBBY)
+	# LIBS	:= -lfat -lnds9 -llobby9d
+# endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MIKMOD_DSWIFI)
+	# LIBS	:= -lfat -lnds9 -ldswifi9 -lmikmod9
+# endif
 
 LIBSPA	:= -lpa9
  
@@ -140,21 +140,21 @@ LIBSPA	:= -lpa9
 ifeq ($(strip $(ARM7_SELECTED)), ARM7_BASIC)
 	LIBDIRS	:=	$(DEVKITPRO)/libnds
 endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MOD_DSWIFI)
-	LIBDIRS	:=	$(DEVKITPRO)/libnds
-endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MOD_LIBLOBBY)
-	LIBDIRS	:=	$(DEVKITPRO)/libnds $(DEVKITPRO)/liblobby
-endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MP3_DSWIFI)
-	LIBDIRS	:=	$(DEVKITPRO)/libnds
-endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MP3_LIBLOBBY)
-	LIBDIRS	:=	$(DEVKITPRO)/libnds $(DEVKITPRO)/liblobby
-endif
-ifeq ($(strip $(ARM7_SELECTED)), ARM7_MIKMOD_DSWIFI)
-	LIBDIRS	:=	$(DEVKITPRO)/libnds $(DEVKITPRO)/mikmod
-endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MOD_DSWIFI)
+	# LIBDIRS	:=	$(DEVKITPRO)/libnds
+# endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MOD_LIBLOBBY)
+	# LIBDIRS	:=	$(DEVKITPRO)/libnds $(DEVKITPRO)/liblobby
+# endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MP3_DSWIFI)
+	# LIBDIRS	:=	$(DEVKITPRO)/libnds
+# endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MP3_LIBLOBBY)
+	# LIBDIRS	:=	$(DEVKITPRO)/libnds $(DEVKITPRO)/liblobby
+# endif
+# ifeq ($(strip $(ARM7_SELECTED)), ARM7_MIKMOD_DSWIFI)
+	# LIBDIRS	:=	$(DEVKITPRO)/libnds $(DEVKITPRO)/mikmod
+# endif
 
 LIBDIRPA	:=	$(PAPATH)
  
