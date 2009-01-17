@@ -21,7 +21,8 @@ namespace DSPaint
 
 	void Pen::SetWidth(u8 width)
 	{
-		this->_width = width;
+		if (width > 0)
+			this->_width = width;
 	}
 
 	u16 Pen::GetColour()
