@@ -8,6 +8,11 @@ namespace DSPaint
 {
 	class PenMode: public IOperationalMode
 	{
+		private:
+			// Increase/decrease pen width by 1
+			void IncreasePenWidth();
+			void DecreasePenWidth();
+
 		public:
             /**
 			 * Creates a new instance of Normal Mode.
