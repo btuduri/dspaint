@@ -7,14 +7,14 @@ This page contains milestones for DS Paint. They have to be met before DS Paint 
 
 When committing a change that meets the milestone, prefix the message with 'Milestone nn:' when 'nn' is the milestone number.
 
-<!--
+
 == 0.1 ==
 
   * ~~Compiles and runs.~~
   * ~~Both screens will appear white~~
   * ~~Able to draw in black using the stylus~~
   * ~~Does not need to do anything else~~
--->
+
 == 0.2 ==
 
   * ~~Refactoring~~
