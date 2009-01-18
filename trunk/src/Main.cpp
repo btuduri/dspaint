@@ -42,6 +42,7 @@ int main(int argc, char* argv[])
         // Don't waste 100% CPU
 		PA_WaitForVBL();
 
+                        DSPaint::PromptManager::ShowMode(mm.GetCurrentMode());
 		// check if stylus is pressed or held
 		if (Stylus.Newpress)
 		{
@@ -131,10 +132,10 @@ int main(int argc, char* argv[])
             {
                 case 1:
                     res = DSPaint::PromptManager::ShowMessagePrompt(
-					"Are you sure you want to clear the image?",
-					2,
-					"Yes",
-					"No"
+						"Are you sure you want to clear the image?",
+						2,
+						"Yes",
+						"No"
                     );
 
                     if (res == 1)
@@ -145,15 +146,16 @@ int main(int argc, char* argv[])
 
                 case 2:
                     res = DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
-                    break;
 
                     if (res == 1)
                     {
                         mm.SetCurrentMode(DSPaint::ModeManager::pen_mode);
+                        DSPaint::PromptManager::ShowMode(mm.GetCurrentMode());
                     }
                     else if (res == 2)
                     {
                         mm.SetCurrentMode(DSPaint::ModeManager::eraser_mode);
+                        DSPaint::PromptManager::ShowMode(mm.GetCurrentMode());
                     }
                     break;
             }

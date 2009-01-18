@@ -21,7 +21,9 @@ namespace DSPaint
     void EraserMode::SetOptions(DSPaint::Options* options)
     {
     	if (options != NULL)
+    	{
 			this->options = options;
+    	}
     }
 
     /**

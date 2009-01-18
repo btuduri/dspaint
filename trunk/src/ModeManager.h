@@ -22,7 +22,7 @@ namespace DSPaint
             };
 
 	    private:
-            Mode currentMode;
+            IOperationalMode *currentMode;
             std::vector<IOperationalMode *> modes;
 
 		public:
