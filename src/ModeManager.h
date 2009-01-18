@@ -11,8 +11,18 @@ namespace DSPaint
 {
 	class ModeManager
 	{
+	    public:
+            /**
+             * Modes enum.
+             */
+            enum Mode
+            {
+                pen_mode,
+                eraser_mode
+            };
+
 	    private:
-            int currentMode;
+            Mode currentMode;
             std::vector<IOperationalMode *> modes;
 
 		public:
@@ -29,7 +39,7 @@ namespace DSPaint
             /**
              * Set the current mode.
              */
-            void SetCurrentMode(int mode);
+            void SetCurrentMode(Mode mode);
 
             /**
              * Get the current mode.
