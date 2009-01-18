@@ -24,7 +24,7 @@ namespace DSPaint
      */
     void ModeManager::SetCurrentMode(Mode mode)
     {
-        this->currentMode = mode;
+        currentMode = this->modes.at(mode);
     }
 
 	/**
@@ -32,7 +32,7 @@ namespace DSPaint
      */
     IOperationalMode *ModeManager::GetCurrentMode()
     {
-        return this->modes.at(this->currentMode);
+        return this->currentMode;
     }
 
 	/**
