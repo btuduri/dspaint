@@ -22,6 +22,7 @@ int main(int argc, char* argv[])
 
     // Create mode manager
     DSPaint::ModeManager mm;
+    mm.SetCurrentMode(DSPaint::ModeManager::pen_mode);
     DSPaint::PromptManager::ShowMode(mm.GetCurrentMode());
 
 	// Create a new canvas
@@ -126,24 +127,36 @@ int main(int argc, char* argv[])
 				"Change mode"
 			);
 
-			if (res == 1)
-			{
-				res = DSPaint::PromptManager::ShowMessagePrompt(
+            switch (res)
+            {
+                case 1:
+                    res = DSPaint::PromptManager::ShowMessagePrompt(
 					"Are you sure you want to clear the image?",
 					2,
 					"Yes",
 					"No"
-				);
+                    );
 
-            	if (res == 1)
-            	{
-            		canvas.Clear();
-            	}
-			}
-			else if (res == 2)
-			{
-				res = DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
-			}
+                    if (res == 1)
+                    {
+                        canvas.Clear();
+                    }
+                    break;
+
+                case 2:
+                    res = DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
+                    break;
+
+                    if (res == 1)
+                    {
+                        mm.SetCurrentMode(DSPaint::ModeManager::pen_mode);
+                    }
+                    else if (res == 2)
+                    {
+                        mm.SetCurrentMode(DSPaint::ModeManager::eraser_mode);
+                    }
+                    break;
+            }
 		}
 	}
 

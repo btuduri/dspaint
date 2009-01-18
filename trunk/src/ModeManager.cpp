@@ -9,8 +9,6 @@ namespace DSPaint
     {
         this->modes.push_back(new PenMode());
         this->modes.push_back(new EraserMode());
-
-        this->SetCurrentMode(0);
     }
 
     /**
@@ -24,7 +22,7 @@ namespace DSPaint
     /**
      * Set the current mode.
      */
-    void ModeManager::SetCurrentMode(int mode)
+    void ModeManager::SetCurrentMode(Mode mode)
     {
         this->currentMode = mode;
     }
