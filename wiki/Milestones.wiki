@@ -33,8 +33,8 @@ When committing a change that meets the milestone, prefix the message with 'Mile
 
 == 0.4 ==
 
-  * Refactor prompt actions into separate IOperationalMode
-  * Create modes for each IOperationalMode
+  * ~~Refactor prompt actions into separate IOperationalMode~~
+  * ~~Create modes for each IOperationalMode~~
   * ~~Make some of the IOperationalMode buttons do something~~ r126
   * ~~Allow mode to be changed~~ r130
 
