@@ -9,37 +9,32 @@ namespace DSPaint
 	class EraserMode: public IOperationalMode
 	{
 		public:
-            /**
+			/**
 			 * Creates a new instance of Normal Mode.
 			 */
-            EraserMode();
-
-            /**
-             * Destroy the instance.
-             */
-            virtual ~EraserMode();
+			EraserMode();
 
 			/**
-			 * Sets the options for the mode.
+			 * Destroy the instance.
 			 */
-            virtual void SetOptions(Options* options);
+			~EraserMode();
 
-            /**
+			/**
 			 * Return the name of the mode.
 			 */
-			virtual char* GetModeName();
+			char* GetModeName();
 
-            /**
+			/**
 			 * Method to execute on A press.
 			 */
 			virtual void A();
 
-            /**
+			/**
 			 * Method to execute on B press.
 			 */
 			virtual void B();
 
-            /**
+			/**
 			 * Method to execute on X press.
 			 */
 			virtual void X();

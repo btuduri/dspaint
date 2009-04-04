@@ -1,4 +1,4 @@
-#include <PA9.h>
+#include "DSPaint.h"
 
 #include "Canvas.h"
 #include "ModeManager.h"
@@ -29,7 +29,7 @@ int main(int argc, char* argv[])
 	DSPaint::Canvas canvas;
 
 	// Create a new pen
-	DSPaint::IPen *pen = new DSPaint::Pen();
+	DSPaint::AbstractPen *pen = new DSPaint::Pen();
 
 	// Create a new options and store stuff so that the modes can use it
 	DSPaint::Options options;
@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
         // Don't waste 100% CPU
 		PA_WaitForVBL();
 
-                        DSPaint::PromptManager::ShowMode(mm.GetCurrentMode());
+		DSPaint::PromptManager::ShowMode(mm.GetCurrentMode());
 		// check if stylus is pressed or held
 		if (Stylus.Newpress)
 		{

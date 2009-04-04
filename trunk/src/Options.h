@@ -1,7 +1,7 @@
 #ifndef OPTIONS_H
 #define OPTIONS_H
 
-#include "IPen.h"
+#include "AbstractPen.h"
 
 namespace DSPaint
 {
@@ -12,7 +12,7 @@ namespace DSPaint
 	{
 		private:
 			char* optionsFile;
-			IPen* pen;
+			AbstractPen* pen;
 
 		public:
 			/**
@@ -29,13 +29,13 @@ namespace DSPaint
 			/**
 			 * Gets the current pen.
 			 */
-			IPen *GetPen();
+			AbstractPen *GetPen();
 
 			/**
 			 * Changes the current pen.
 			 * @pen The new pen to use. Passing in NULL will not change it.
 			 */
-			void SetPen(IPen *pen);
+			void SetPen(AbstractPen *pen);
 	};
 }
 
