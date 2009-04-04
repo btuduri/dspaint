@@ -12,12 +12,12 @@ namespace DSPaint
 		// currently does nothing
 	}
 
-	IPen* Options::GetPen()
+	AbstractPen* Options::GetPen()
 	{
 		return this->pen;
 	}
 
-	void Options::SetPen(IPen *pen)
+	void Options::SetPen(AbstractPen *pen)
 	{
 		if (pen != NULL)
 		{

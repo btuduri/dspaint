@@ -22,18 +22,12 @@ namespace DSPaint
             /**
              * Destroy the instance.
              */
-            virtual ~PenMode();
-
-			/**
-			 * Sets the options for the mode.
-			 * @options The options to use. Passing in NULL will do nothing.
-			 */
-            virtual void SetOptions(DSPaint::Options *options);
+            ~PenMode();
 
             /**
 			 * Return the name of the mode.
 			 */
-			virtual char* GetModeName();
+			char* GetModeName();
 
             /**
 			 * Method to execute on A press.

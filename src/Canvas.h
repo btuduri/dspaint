@@ -10,21 +10,21 @@ namespace DSPaint
 {
     class Canvas
     {
-        private:
+        protected:
 			DIMENSION dimension;
 			u16 backgroundColour;
+			u16 foregroundColour;
 
         public:
 			/**
-			 * Creates a new canvas. This also sets the screen to the background colour.
-			 * @backgroundColour The background colour.
+			 * Creates a new canvas with the default colours.
 			 */
-			Canvas(u16 backgroundColour = PA_RGB(31,31,31));
+			Canvas();
 
 			/**
 			 * Gets the dimensions of this canvas.
 			 */
-			DIMENSION GetDimensions();
+			DIMENSION GetDimension();
 
 			/**
 			 * Gets the background colour of this canvas.
@@ -36,6 +36,16 @@ namespace DSPaint
 			 * @backgroundColour The background colour of this canvas.
 			 */
 			void SetBackgroundColour(u16 backgroundColour);
+
+			/**
+			 * Gets the foreground colour.
+			 */
+			u16 GetForegroundColour();
+
+			/**
+			 * Sets the foregroumnd colour.
+			 */
+			void SetForegroundColour(u16 colour);
 
 			/**
 			 * Gets a colour from a pixel.
@@ -52,7 +62,6 @@ namespace DSPaint
 			 * @colour The colour to use.
 			 */
 			void DrawPoint(s16 x, s16 y, u16 colour);
-
 
 			/**
 			 * Sets a line of pixels to a colour.
