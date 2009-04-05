@@ -32,8 +32,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="DSPaint.layout" />
-		<Unit filename="Makefile" />
 		<Unit filename="src\AbstractPen.cpp" />
 		<Unit filename="src\AbstractPen.h" />
 		<Unit filename="src\Canvas.cpp" />

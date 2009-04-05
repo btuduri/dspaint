@@ -20,7 +20,8 @@ namespace DSPaint
 
 	void AbstractPen::SetWidth(u8 width)
 	{
-		m_width = width;
+		if (width > 0)
+			m_width = width;
 	}
 
 	u16 AbstractPen::GetColour()
