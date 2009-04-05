@@ -24,7 +24,7 @@ PATH 		:= $(DEVKITARM)/bin:$(PATH)
 TEXT1 		:= DSPaint -
 TEXT2 		:= Paint stuff on 
 TEXT3 		:= your DS!
-ICON 		:= -b $(CURDIR)/../logo.bmp
+ICON 		:= -b $(CURDIR)/../icons/logo.bmp
 
 #---------------------------------------------------------------------------------
 .SUFFIXES:
