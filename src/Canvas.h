@@ -3,7 +3,7 @@
 
 #include <PA9.h>
 
-#include "Constants.h"
+#include "DSPaint.h"
 #include "Dimension.h"
 
 namespace DSPaint

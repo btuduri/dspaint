@@ -1,5 +1,3 @@
-#include <PA9.h>
-
 #include "Pen.h"
 
 namespace DSPaint
