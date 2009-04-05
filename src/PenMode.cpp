@@ -12,14 +12,14 @@ namespace DSPaint
 
 	void PenMode::IncreasePenWidth()
 	{
-		//u8 old = this->options->GetPen()->GetWidth();
-		//this->options->GetPen()->SetWidth(old + 1);
+		u8 old = this->options->GetPen()->GetWidth();
+		this->options->GetPen()->SetWidth(old + 1);
 	}
 
 	void PenMode::DecreasePenWidth()
 	{
-		//u8 old = this->options->GetPen()->GetWidth();
-		//this->options->GetPen()->SetWidth(old - 1);
+		u8 old = this->options->GetPen()->GetWidth();
+		this->options->GetPen()->SetWidth(old - 1);
 	}
 
 	char* PenMode::GetModeName()
@@ -48,22 +48,22 @@ namespace DSPaint
 
 	void PenMode::Up()
 	{
-		//IncreasePenWidth();
+		IncreasePenWidth();
 	}
 
 	void PenMode::Down()
 	{
-		//DecreasePenWidth();
+		DecreasePenWidth();
 	}
 
 	void PenMode::Left()
 	{
-		//DecreasePenWidth();
+		DecreasePenWidth();
 	}
 
 	void PenMode::Right()
 	{
-		//IncreasePenWidth();
+		IncreasePenWidth();
 	}
 
 	void PenMode::Start()
