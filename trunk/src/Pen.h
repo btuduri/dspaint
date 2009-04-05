@@ -1,6 +1,8 @@
 #ifndef PEN_H
 #define PEN_H
 
+#include <PA9.h>
+
 #include "AbstractPen.h"
 
 namespace DSPaint

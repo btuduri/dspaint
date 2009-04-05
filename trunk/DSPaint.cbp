@@ -38,7 +38,6 @@
 		<Unit filename="src\AbstractPen.h" />
 		<Unit filename="src\Canvas.cpp" />
 		<Unit filename="src\Canvas.h" />
-		<Unit filename="src\Constants.h" />
 		<Unit filename="src\DSPaint.h" />
 		<Unit filename="src\Dimension.h" />
 		<Unit filename="src\EraserMode.cpp" />

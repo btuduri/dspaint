@@ -1,7 +1,6 @@
 #ifndef ABSTRACTMODE_H
 #define ABSTRACTMODE_H
 
-#include "Canvas.h"
 #include "Options.h"
 
 namespace DSPaint
