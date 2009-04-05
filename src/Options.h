@@ -15,13 +15,20 @@ namespace DSPaint
 			char* optionsFile;
 			AbstractPen* pen;
 			Canvas* canvas;
+			Options();
+			~Options();
+			Options(Options const&);
+			Options& operator=(Options const&);
 
 		public:
 			/**
-			 * Creates a new options class.
-			 * @file The options file to load from.
+			 * Gets an instance of the options.
 			 */
-			Options(char *file = "options.ini");
+			static Options& Instance()
+			{
+				static Options options;
+				return options;
+			}
 
 			/**
 			 * Saves the options to the file.

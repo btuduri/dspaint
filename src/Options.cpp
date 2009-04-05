@@ -2,14 +2,16 @@
 
 namespace DSPaint
 {
-	Options::Options(char *file)
+	Options::Options()
 	{
-		// currently does nothing
+	}
+
+	Options::~Options()
+	{
 	}
 
 	void Options::Save()
 	{
-		// currently does nothing
 	}
 
 	Canvas* Options::GetCanvas()

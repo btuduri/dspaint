@@ -32,10 +32,8 @@ int main(int argc, char* argv[])
 	DSPaint::AbstractPen *pen = new DSPaint::Pen();
 
 	// Create a new options and store stuff so that the modes can use it
-	DSPaint::Options options;
-	options.SetPen(pen);
-	options.SetCanvas(&canvas);
-	mm.GetCurrentMode()->SetOptions(&options);
+	DSPaint::Options::Instance().SetPen(pen);
+	DSPaint::Options::Instance().SetCanvas(&canvas);
 
 	// Loop for processing commands
 	while (true)

@@ -12,14 +12,14 @@ namespace DSPaint
 
 	void PenMode::IncreasePenWidth()
 	{
-		u8 old = this->options->GetPen()->GetWidth();
-		this->options->GetPen()->SetWidth(old + 1);
+		u8 old = DSPaint::Options::Instance().GetPen()->GetWidth();
+		DSPaint::Options::Instance().GetPen()->SetWidth(old + 1);
 	}
 
 	void PenMode::DecreasePenWidth()
 	{
-		u8 old = this->options->GetPen()->GetWidth();
-		this->options->GetPen()->SetWidth(old - 1);
+		u8 old = DSPaint::Options::Instance().GetPen()->GetWidth();
+		DSPaint::Options::Instance().GetPen()->SetWidth(old - 1);
 	}
 
 	char* PenMode::GetName()
