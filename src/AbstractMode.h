@@ -28,7 +28,7 @@ namespace DSPaint
             /**
 			 * Return the name of the mode.
 			 */
-			virtual char *GetModeName();
+			virtual char *GetName();
 
 			/**
 			 * Sets the options for the mode.

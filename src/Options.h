@@ -2,6 +2,7 @@
 #define OPTIONS_H
 
 #include "AbstractPen.h"
+#include "Canvas.h"
 
 namespace DSPaint
 {
@@ -13,6 +14,7 @@ namespace DSPaint
 		private:
 			char* optionsFile;
 			AbstractPen* pen;
+			Canvas* canvas;
 
 		public:
 			/**
@@ -25,6 +27,17 @@ namespace DSPaint
 			 * Saves the options to the file.
 			 */
 			void Save();
+
+			/**
+			 * Gets the current canvas.
+			 */
+			Canvas *GetCanvas();
+
+			/**
+			 * Sets the canvas.
+			 * @canvas The new canvas. Passing in NULL will not change it.
+			 */
+			void SetCanvas(Canvas *canvas);
 
 			/**
 			 * Gets the current pen.

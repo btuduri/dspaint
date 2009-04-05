@@ -12,6 +12,17 @@ namespace DSPaint
 		// currently does nothing
 	}
 
+	Canvas* Options::GetCanvas()
+	{
+		return this->canvas;
+	}
+
+	void Options::SetCanvas(Canvas *canvas)
+	{
+		if (canvas != NULL)
+			this->canvas = canvas;
+	}
+
 	AbstractPen* Options::GetPen()
 	{
 		return this->pen;

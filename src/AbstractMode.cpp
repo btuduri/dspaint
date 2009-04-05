@@ -10,9 +10,9 @@ namespace DSPaint
 	{
 	}
 
-	char *AbstractMode::GetModeName()
+	char *AbstractMode::GetName()
 	{
-		return "IOperationalMode";
+		return "AbstractMode";
 	}
 
 	void AbstractMode::SetOptions(Options *options)

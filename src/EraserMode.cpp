@@ -8,10 +8,9 @@ namespace DSPaint
 
 	EraserMode::~EraserMode()
 	{
-
 	}
 
-	char* EraserMode::GetModeName()
+	char* EraserMode::GetName()
 	{
 		return "Eraser Mode";
 	}

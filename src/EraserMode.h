@@ -17,12 +17,12 @@ namespace DSPaint
 			/**
 			 * Destroy the instance.
 			 */
-			~EraserMode();
+			virtual ~EraserMode();
 
 			/**
 			 * Return the name of the mode.
 			 */
-			char* GetModeName();
+			virtual char* GetName();
 
 			/**
 			 * Method to execute on A press.
