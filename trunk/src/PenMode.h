@@ -1,12 +1,12 @@
 #ifndef PENMODE_H
 #define PENMODE_H
 
-#include "IOperationalMode.h"
+#include "AbstractMode.h"
 #include "Options.h"
 
 namespace DSPaint
 {
-	class PenMode: public IOperationalMode
+	class PenMode: public AbstractMode
 	{
 		private:
 			// Increase/decrease pen width by 1

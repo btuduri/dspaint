@@ -1,12 +1,12 @@
 #ifndef ERASERMODE_H
 #define ERASERMODE_H
 
-#include "IOperationalMode.h"
+#include "AbstractMode.h"
 #include "Options.h"
 
 namespace DSPaint
 {
-	class EraserMode: public IOperationalMode
+	class EraserMode: public AbstractMode
 	{
 		public:
 			/**

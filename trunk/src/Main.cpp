@@ -2,7 +2,7 @@
 
 #include "Canvas.h"
 #include "ModeManager.h"
-#include "IOperationalMode.h"
+#include "AbstractMode.h"
 #include "Options.h"
 #include "Pen.h"
 #include "PromptManager.h"

@@ -6,7 +6,7 @@
 
 #include <PA9.h>
 
-#include "IOperationalMode.h"
+#include "AbstractMode.h"
 
 namespace DSPaint
 {
@@ -21,7 +21,7 @@ namespace DSPaint
 			 * @modes The vector containing modes to display.
 			 * @return The mode selected.
 			 */
-			static int ShowModePrompt(std::vector<IOperationalMode *> modes);
+			static int ShowModePrompt(std::vector<AbstractMode *> modes);
 
 			/**
 			 * Shows a message prompt.
@@ -35,7 +35,7 @@ namespace DSPaint
 			 * Shows a mode.
 			 * @mode The mode to use.
 			 */
-			static void ShowMode(IOperationalMode * mode);
+			static void ShowMode(AbstractMode * mode);
 	};
 }
 
