@@ -34,6 +34,7 @@ int main(int argc, char* argv[])
 	// Create a new options and store stuff so that the modes can use it
 	DSPaint::Options options;
 	options.SetPen(pen);
+	options.SetCanvas(&canvas);
 	mm.GetCurrentMode()->SetOptions(&options);
 
 	// Loop for processing commands

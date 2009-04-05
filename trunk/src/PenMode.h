@@ -14,32 +14,32 @@ namespace DSPaint
 			void DecreasePenWidth();
 
 		public:
-            /**
+			/**
 			 * Creates a new instance of Normal Mode.
 			 */
-            PenMode();
+			PenMode();
 
-            /**
-             * Destroy the instance.
-             */
-            ~PenMode();
+			/**
+			 * Destroy the instance.
+			 */
+			virtual ~PenMode();
 
-            /**
+			/**
 			 * Return the name of the mode.
 			 */
-			char* GetModeName();
+			virtual char* GetName();
 
-            /**
+			/**
 			 * Method to execute on A press.
 			 */
 			virtual void A();
 
-            /**
+			/**
 			 * Method to execute on B press.
 			 */
 			virtual void B();
 
-            /**
+			/**
 			 * Method to execute on X press.
 			 */
 			virtual void X();

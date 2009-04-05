@@ -14,7 +14,7 @@ namespace DSPaint
 		while ((i < modes.size()) && (i < PromptManager::MAX_OPTIONS))
 		{
 			PA_OutputSimpleText(1, 1, pos, keys[i]);
-			PA_OutputSimpleText(1, 4, pos, modes.at(i)->GetModeName());
+			PA_OutputSimpleText(1, 4, pos, modes.at(i)->GetName());
 
 			pos+=2; // Two new lines for spacing.
 			i++;
@@ -169,6 +169,6 @@ namespace DSPaint
 
 	void PromptManager::ShowMode(AbstractMode *mode)
 	{
-	    PA_BoxText(1, 0, 22, 31, 23, mode->GetModeName(), 100);
+	    PA_BoxText(1, 0, 22, 31, 23, mode->GetName(), 100);
 	}
 }
