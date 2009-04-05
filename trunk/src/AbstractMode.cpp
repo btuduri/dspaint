@@ -15,11 +15,6 @@ namespace DSPaint
 		return "AbstractMode";
 	}
 
-	void AbstractMode::SetOptions(Options *options)
-	{
-		this->options = options;
-	}
-
 	void AbstractMode::A()
 	{
 	}
