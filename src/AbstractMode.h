@@ -1,5 +1,5 @@
-#ifndef IOPERATIONALMODE_H
-#define IOPERATIONALMODE_H
+#ifndef ABSTRACTMODE_H
+#define ABSTRACTMODE_H
 
 #include "Canvas.h"
 #include "Options.h"
@@ -9,7 +9,7 @@ namespace DSPaint
 	/**
 	 * The child classes should implement the button presses as the default does nothing.
 	 */
-	class IOperationalMode
+	class AbstractMode
 	{
 	    protected:
 			Options *options;
@@ -18,12 +18,12 @@ namespace DSPaint
 			/**
 			 * Creates a new mode.
 			 */
-			IOperationalMode();
+			AbstractMode();
 
 			/**
 			 * Destroys this mode.
 			 */
-			virtual ~IOperationalMode();
+			virtual ~AbstractMode();
 
             /**
 			 * Return the name of the mode.

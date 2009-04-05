@@ -18,12 +18,12 @@ namespace DSPaint
 		currentMode = this->modes.at(mode);
 	}
 
-	IOperationalMode *ModeManager::GetCurrentMode()
+	AbstractMode *ModeManager::GetCurrentMode()
 	{
 		return this->currentMode;
 	}
 
-	std::vector<IOperationalMode *> ModeManager::GetModes()
+	std::vector<AbstractMode *> ModeManager::GetModes()
 	{
 		return this->modes;
 	}

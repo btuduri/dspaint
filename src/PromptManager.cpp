@@ -4,7 +4,7 @@ namespace DSPaint
 {
 	const char *PromptManager::keys[] = {"A","B","X","Y","St","Sl"};
 
-	int PromptManager::ShowModePrompt(std::vector<IOperationalMode *> modes)
+	int PromptManager::ShowModePrompt(std::vector<AbstractMode *> modes)
 	{
 		int pos = 4;
 		size_t i = 0;
@@ -167,7 +167,7 @@ namespace DSPaint
 		return ret;
 	}
 
-	void PromptManager::ShowMode(IOperationalMode *mode)
+	void PromptManager::ShowMode(AbstractMode *mode)
 	{
 	    PA_BoxText(1, 0, 22, 31, 23, mode->GetModeName(), 100);
 	}

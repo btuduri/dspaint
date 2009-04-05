@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "IOperationalMode.h"
+#include "AbstractMode.h"
 #include "PenMode.h"
 #include "EraserMode.h"
 
@@ -22,8 +22,8 @@ namespace DSPaint
 			};
 
 		private:
-			IOperationalMode *currentMode;
-			std::vector<IOperationalMode *> modes;
+			AbstractMode *currentMode;
+			std::vector<AbstractMode *> modes;
 
 		public:
 			/**
@@ -44,12 +44,12 @@ namespace DSPaint
 			/**
 			 * Get the current mode.
 			 */
-			IOperationalMode *GetCurrentMode();
+			AbstractMode *GetCurrentMode();
 
 			/**
 			 * Get a list of all modes.
 			 */
-			std::vector<IOperationalMode *> GetModes();
+			std::vector<AbstractMode *> GetModes();
 
 			/**
 			 * Get number of modes.
