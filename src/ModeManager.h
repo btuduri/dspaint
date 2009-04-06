@@ -22,7 +22,6 @@ namespace DSPaint
 			};
 
 		private:
-			AbstractMode *currentMode;
 			std::vector<AbstractMode *> modes;
 
 		public:
@@ -35,16 +34,6 @@ namespace DSPaint
 			 * Destroy the instance.
 			 */
 			~ModeManager();
-
-			/**
-			 * Set the current mode.
-			 */
-			void SetCurrentMode(Mode mode);
-
-			/**
-			 * Get the current mode.
-			 */
-			AbstractMode *GetCurrentMode();
 
 			/**
 			 * Get a list of all modes.

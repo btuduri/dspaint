@@ -7,6 +7,7 @@
 #include <PA9.h>
 
 #include "AbstractMode.h"
+#include "DSPaint.h"
 
 namespace DSPaint
 {

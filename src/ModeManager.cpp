@@ -13,16 +13,6 @@ namespace DSPaint
 		this->modes.clear();
 	}
 
-	void ModeManager::SetCurrentMode(Mode mode)
-	{
-		currentMode = this->modes.at(mode);
-	}
-
-	AbstractMode *ModeManager::GetCurrentMode()
-	{
-		return this->currentMode;
-	}
-
 	std::vector<AbstractMode *> ModeManager::GetModes()
 	{
 		return this->modes;

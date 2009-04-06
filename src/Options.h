@@ -1,6 +1,7 @@
 #ifndef OPTIONS_H
 #define OPTIONS_H
 
+#include "AbstractMode.h"
 #include "AbstractPen.h"
 #include "Canvas.h"
 
@@ -14,6 +15,7 @@ namespace DSPaint
 		private:
 			char* optionsFile;
 			AbstractPen* pen;
+			AbstractMode* mode;
 			Canvas* canvas;
 			Options();
 			~Options();
@@ -56,6 +58,16 @@ namespace DSPaint
 			 * @pen The new pen to use. Passing in NULL will not change it.
 			 */
 			void SetPen(AbstractPen *pen);
+
+			/**
+			 * Gets the current mode.
+			 */
+			AbstractMode *GetCurrentMode();
+
+			/**
+			 * Sets the current mode.
+			 */
+			void SetCurrentMode(AbstractMode *mode);
 	};
 }
 

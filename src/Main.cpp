@@ -10,20 +10,23 @@
 // entry point
 int main(int argc, char* argv[])
 {
-    // Init
-    PA_Init();
+	// Init
+	PA_Init();
 
-    // Init touch screen drawing
-    PA_InitVBL();
+	// Init touch screen drawing
+	PA_InitVBL();
 
-    // Init the console
-    PA_InitText(TOP_SCREEN, 0);
-    PA_SetTextCol(1, 31, 31, 31);
+	// Init the console
+	PA_InitText(TOP_SCREEN, 0);
+	PA_SetTextCol(1, 31, 31, 31);
 
-    // Create mode manager
-    DSPaint::ModeManager mm;
-    mm.SetCurrentMode(DSPaint::ModeManager::pen_mode);
-    DSPaint::PromptManager::ShowMode(mm.GetCurrentMode());
+	DSPaint::Options& options = DSPaint::Options::Instance();
+
+	// Create mode manager
+	DSPaint::ModeManager mm;
+	options.SetCurrentMode(new DSPaint::PenMode());
+	//mm.SetCurrentMode(DSPaint::ModeManager::pen_mode);
+	DSPaint::PromptManager::ShowMode(options.GetCurrentMode());
 
 	// Create a new canvas
 	DSPaint::Canvas canvas;
@@ -32,16 +35,16 @@ int main(int argc, char* argv[])
 	DSPaint::AbstractPen *pen = new DSPaint::Pen();
 
 	// Create a new options and store stuff so that the modes can use it
-	DSPaint::Options::Instance().SetPen(pen);
-	DSPaint::Options::Instance().SetCanvas(&canvas);
+	options.SetPen(pen);
+	options.SetCanvas(&canvas);
 
 	// Loop for processing commands
 	while (true)
 	{
-        // Don't waste 100% CPU
+		// Don't waste 100% CPU
 		PA_WaitForVBL();
 
-		DSPaint::PromptManager::ShowMode(mm.GetCurrentMode());
+		DSPaint::PromptManager::ShowMode(options.GetCurrentMode());
 		// check if stylus is pressed or held
 		if (Stylus.Newpress)
 		{
@@ -63,7 +66,7 @@ int main(int argc, char* argv[])
 		}
 		else if (Stylus.Held)
 		{
-			if(PA_olddowntime[BOTTOM_SCREEN] != (Stylus.Downtime - 1))
+			if (PA_olddowntime[BOTTOM_SCREEN] != (Stylus.Downtime - 1))
 			{
 				PA_oldx[BOTTOM_SCREEN] = Stylus.X;
 				PA_oldy[BOTTOM_SCREEN] = Stylus.Y;
@@ -80,43 +83,43 @@ int main(int argc, char* argv[])
 		// the IOperationalMode should handle the rest of the button presses
 		if (Pad.Released.A)
 		{
-			mm.GetCurrentMode()->A();
+			options.GetCurrentMode()->A();
 		}
 		else if (Pad.Released.B)
 		{
-			mm.GetCurrentMode()->B();
+			options.GetCurrentMode()->B();
 		}
 		else if (Pad.Released.X)
 		{
-			mm.GetCurrentMode()->X();
+			options.GetCurrentMode()->X();
 		}
 		else if (Pad.Released.Y)
 		{
-			mm.GetCurrentMode()->Y();
+			options.GetCurrentMode()->Y();
 		}
 		else if (Pad.Released.Up)
 		{
-			mm.GetCurrentMode()->Up();
+			options.GetCurrentMode()->Up();
 		}
 		else if (Pad.Released.Down)
 		{
-			mm.GetCurrentMode()->Down();
+			options.GetCurrentMode()->Down();
 		}
 		else if (Pad.Released.Left)
 		{
-			mm.GetCurrentMode()->Left();
+			options.GetCurrentMode()->Left();
 		}
 		else if (Pad.Released.Right)
 		{
-			mm.GetCurrentMode()->Right();
+			options.GetCurrentMode()->Right();
 		}
 		else if (Pad.Released.Start)
 		{
-			mm.GetCurrentMode()->Start();
+			options.GetCurrentMode()->Start();
 		}
 		else if (Pad.Released.Select)
 		{
-			mm.GetCurrentMode()->Select();
+			options.GetCurrentMode()->Select();
 		}
 		else if (Pad.Released.L || Pad.Released.R)
 		{
@@ -127,37 +130,37 @@ int main(int argc, char* argv[])
 				"Change mode"
 			);
 
-            switch (res)
-            {
-                case 1:
-                    res = DSPaint::PromptManager::ShowMessagePrompt(
-						"Are you sure you want to clear the image?",
-						2,
-						"Yes",
-						"No"
-                    );
+			switch (res)
+			{
+				case 1:
+					res = DSPaint::PromptManager::ShowMessagePrompt(
+							"Are you sure you want to clear the image?",
+							2,
+							"Yes",
+							"No"
+						);
 
-                    if (res == 1)
-                    {
-                        canvas.Clear();
-                    }
-                    break;
+					if (res == 1)
+					{
+						canvas.Clear();
+					}
+					break;
 
-                case 2:
-                    res = DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
+				case 2:
+					res = DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
 
-                    if (res == 1)
-                    {
-                        mm.SetCurrentMode(DSPaint::ModeManager::pen_mode);
-                        DSPaint::PromptManager::ShowMode(mm.GetCurrentMode());
-                    }
-                    else if (res == 2)
-                    {
-                        mm.SetCurrentMode(DSPaint::ModeManager::eraser_mode);
-                        DSPaint::PromptManager::ShowMode(mm.GetCurrentMode());
-                    }
-                    break;
-            }
+					if (res == 1)
+					{
+						options.SetCurrentMode(new DSPaint::PenMode());
+						DSPaint::PromptManager::ShowMode(options.GetCurrentMode());
+					}
+					else if (res == 2)
+					{
+						options.SetCurrentMode(new DSPaint::EraserMode());
+						DSPaint::PromptManager::ShowMode(options.GetCurrentMode());
+					}
+					break;
+			}
 		}
 	}
 

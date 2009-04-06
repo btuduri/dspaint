@@ -22,7 +22,9 @@ namespace DSPaint
 	void Options::SetCanvas(Canvas *canvas)
 	{
 		if (canvas != NULL)
+		{
 			this->canvas = canvas;
+		}
 	}
 
 	AbstractPen* Options::GetPen()
@@ -35,6 +37,19 @@ namespace DSPaint
 		if (pen != NULL)
 		{
 			this->pen = pen;
+		}
+	}
+
+	AbstractMode* Options::GetCurrentMode()
+	{
+		return this->mode;
+	}
+
+	void Options::SetCurrentMode(AbstractMode *mode)
+	{
+		if (mode != NULL)
+		{
+			this->mode = mode;
 		}
 	}
 }
