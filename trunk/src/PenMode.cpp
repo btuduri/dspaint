@@ -22,7 +22,7 @@ namespace DSPaint
 		DSPaint::Options::Instance().GetPen()->SetWidth(old - 1);
 	}
 
-	char* PenMode::GetName()
+	const char* PenMode::GetName()
 	{
 		return "Pen Mode";
 	}

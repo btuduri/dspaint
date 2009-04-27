@@ -27,7 +27,7 @@ namespace DSPaint
 			/**
 			 * Return the name of the mode.
 			 */
-			virtual char* GetName();
+			virtual const char* GetName();
 
 			/**
 			 * Method to execute on A press.

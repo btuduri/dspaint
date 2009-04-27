@@ -1,8 +1,7 @@
 #include "DSPaint.h"
 
 #include "Canvas.h"
-#include "ModeManager.h"
-#include "AbstractMode.h"
+#include "ModeFactory.h"
 #include "Options.h"
 #include "Pen.h"
 #include "PromptManager.h"
@@ -22,10 +21,8 @@ int main(int argc, char* argv[])
 
 	DSPaint::Options& options = DSPaint::Options::Instance();
 
-	// Create mode manager
-	DSPaint::ModeManager mm;
-	options.SetCurrentMode(new DSPaint::PenMode());
-	//mm.SetCurrentMode(DSPaint::ModeManager::pen_mode);
+	//DSPaint::Modes mode = DSPaint::Modes::PenMode;
+	options.SetCurrentMode(DSPaint::ModeFactory::GetMode(DSPaint::ModeFactory::PEN_MODE));
 	DSPaint::PromptManager::ShowMode(options.GetCurrentMode());
 
 	// Create a new canvas
@@ -80,7 +77,7 @@ int main(int argc, char* argv[])
 		PA_olddowntime[BOTTOM_SCREEN] = Stylus.Downtime;
 
 		// new method for each button press
-		// the IOperationalMode should handle the rest of the button presses
+		// the AbstractMode should handle the rest of the button presses
 		if (Pad.Released.A)
 		{
 			options.GetCurrentMode()->A();
@@ -96,6 +93,14 @@ int main(int argc, char* argv[])
 		else if (Pad.Released.Y)
 		{
 			options.GetCurrentMode()->Y();
+		}
+		else if (Pad.Released.L)
+		{
+			options.GetCurrentMode()->L();
+		}
+		else if (Pad.Released.R)
+		{
+			options.GetCurrentMode()->R();
 		}
 		else if (Pad.Released.Up)
 		{
@@ -120,7 +125,7 @@ int main(int argc, char* argv[])
 		else if (Pad.Released.Select)
 		{
 			options.GetCurrentMode()->Select();
-		}
+		}/*
 		else if (Pad.Released.L || Pad.Released.R)
 		{
 			int res = DSPaint::PromptManager::ShowMessagePrompt(
@@ -147,21 +152,25 @@ int main(int argc, char* argv[])
 					break;
 
 				case 2:
-					res = DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
+					//res = DSPaint::PromptManager::ShowModePrompt(mm.GetModes());
 
-					if (res == 1)
-					{
-						options.SetCurrentMode(new DSPaint::PenMode());
-						DSPaint::PromptManager::ShowMode(options.GetCurrentMode());
-					}
-					else if (res == 2)
-					{
-						options.SetCurrentMode(new DSPaint::EraserMode());
-						DSPaint::PromptManager::ShowMode(options.GetCurrentMode());
-					}
+					//if (res == 1)
+					//{
+					//	options.SetCurrentMode(new DSPaint::PenMode());
+					//	DSPaint::PromptManager::ShowMode(options.GetCurrentMode());
+					//}
+					//else if (res == 2)
+					//{
+					//	options.SetCurrentMode(new DSPaint::EraserMode());
+					//	DSPaint::PromptManager::ShowMode(options.GetCurrentMode());
+					//}
 					break;
+
+					//DSPaint::AbstractMode *mode;
+					//mode = DSPaint::PromptManager::ChooseMode();
+					//options.SetCurrentMode(mode);
 			}
-		}
+		}*/
 	}
 
 	return 0;

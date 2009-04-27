@@ -7,6 +7,8 @@
 
 namespace DSPaint
 {
+	class AbstractMode;
+
 	/**
 	 * Class to load/save options.
 	 */

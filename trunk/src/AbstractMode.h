@@ -1,6 +1,10 @@
 #ifndef ABSTRACTMODE_H
 #define ABSTRACTMODE_H
 
+#include "Canvas.h"
+#include "Options.h"
+#include "PromptManager.h"
+
 namespace DSPaint
 {
 	/**
@@ -8,6 +12,9 @@ namespace DSPaint
 	 */
 	class AbstractMode
 	{
+		private:
+			void ChooseMode();
+
 		public:
 			/**
 			 * Creates a new mode.
@@ -22,7 +29,7 @@ namespace DSPaint
             /**
 			 * Return the name of the mode.
 			 */
-			virtual char *GetName();
+			virtual const char *GetName();
 
 			/**
 			 * Method to execute on A press.
@@ -43,6 +50,16 @@ namespace DSPaint
 			 * Method to execute on Y press.
 			 */
 			virtual void Y();
+
+			/**
+			 * Method to execute on L press.
+			 */
+			void L();
+
+			/**
+			 * Method to execute on R press.
+			 */
+			void R();
 
 			/**
 			 * Method to execute on +up press.
