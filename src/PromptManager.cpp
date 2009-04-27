@@ -167,6 +167,11 @@ namespace DSPaint
 		return ret;
 	}
 
+	void *PromptManager::ChooseMode()
+	{
+		return NULL;
+	}
+
 	void PromptManager::ShowMode(AbstractMode *mode)
 	{
 	    PA_BoxText(1, 0, 22, 31, 23, mode->GetName(), 100);

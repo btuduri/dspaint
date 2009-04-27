@@ -11,6 +11,8 @@
 
 namespace DSPaint
 {
+	class AbstractMode;
+
 	class PromptManager
 	{
 		private:
@@ -31,6 +33,11 @@ namespace DSPaint
 			 * @return The option selected pressed. 0 means cancelled otherwise an index starting from 1.
 			 */
 			static int ShowMessagePrompt(const char *message, size_t count, ...);
+
+			/**
+			 * Chooses a mode. This will set the current mode in the options.
+			 */
+			static void *ChooseMode();
 
 			/**
 			 * Shows a mode.

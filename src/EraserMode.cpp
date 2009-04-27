@@ -10,7 +10,7 @@ namespace DSPaint
 	{
 	}
 
-	char* EraserMode::GetName()
+	const char* EraserMode::GetName()
 	{
 		return "Eraser Mode";
 	}
